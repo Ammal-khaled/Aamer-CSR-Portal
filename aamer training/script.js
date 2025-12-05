@@ -29,3 +29,16 @@ function generateScript() {
   const output = document.getElementById('scriptOutput');
   output.textContent = scripts[service] || "Please select a valid service.";
 }
+
+const collapsibles = document.querySelectorAll(".collapsible");
+collapsibles.forEach(btn => {
+  btn.addEventListener("click", function() {
+    this.classList.toggle("active");
+    const content = this.nextElementSibling;
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+});
