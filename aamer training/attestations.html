@@ -212,20 +212,31 @@ Do you have the documents ready, or would you like guidance on submitting them t
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const collapsibles = document.querySelectorAll('.collapsible');
-  collapsibles.forEach(btn => {
-    btn.addEventListener('click', () => {
-      btn.classList.toggle('active');
-      const panel = btn.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
+  document.addEventListener('DOMContentLoaded', () => {
+    const collapsibles = document.querySelectorAll('.collapsible');
+    collapsibles.forEach(btn => {
+      btn.addEventListener('click', function() {
+        this.classList.toggle('active');
+        const content = this.nextElementSibling;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+        } else {
+          // close all other panels
+          document.querySelectorAll('.content-collapsible').forEach(c => {
+            if(c !== content) c.style.maxHeight = null;
+          });
+          content.style.maxHeight = content.scrollHeight + 'px';
+          setTimeout(() => content.scrollIntoView({behavior:'smooth', block:'center'}), 220);
+        }
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      document.querySelectorAll('.content-collapsible').forEach(panel => {
+        if(panel.style.maxHeight) panel.style.maxHeight = panel.scrollHeight + 'px';
+      });
     });
   });
-});
 </script>
 </body>
 </html>
