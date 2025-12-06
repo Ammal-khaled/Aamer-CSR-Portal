@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aamer CSR Portal</title>
+
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<style>
+/* --- Reset & Basic --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family:'DM Sans',sans-serif;   background-color: #f0f0f0; color:#333; display:flex; min-height:100vh; }
+
+/* --- Sidebar --- */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg,#0a0146 0%,#1f3f7c 50%,#2e86c1 100%);
+  color:#fff; flex-shrink:0; display:flex; flex-direction:column;
+  padding:22px; position:fixed; height:100%; overflow-y:auto;
+  border-right:1px solid rgba(255,255,255,0.15);
+}
+.sidebar h2 { font-family:'Libre Baskerville',serif; font-size:1.7rem; margin-bottom:28px; color:#fff; }
+.sidebar a { color:#fff; text-decoration:none; margin:6px 0; display:flex; align-items:center;
+  padding:12px 14px; border-radius:8px; transition:0.25s; font-size:1rem; font-weight:500; }
+.sidebar a i { margin-right:10px; font-size:1.1rem; opacity:0.9; }
+.sidebar a:hover { background:rgba(41, 128, 185, 0.2); } /* soft dark blue hover */
+.sidebar a.active { background:rgba(41, 128, 185, 0.35); font-weight:550; }
+
+/* --- Content --- */
+.content { margin-left:280px; flex-grow:1; padding:35px 45px; overflow-y:auto; }
+h1,h2,h3 { font-family:'Libre Baskerville',serif; margin-bottom:15px; color:#0a0146; }
+p { margin-bottom:15px; line-height:1.6; }
+
+/* --- Cards --- */
+.card { background:#fff; border-radius:10px; padding:22px; margin-bottom:28px; box-shadow:0 3px 8px rgba(0,0,0,0.12); transition:all 0.3s ease; }
+.card:hover { box-shadow:0 6px 16px rgba(0,0,0,0.15); }
+
+/* --- Collapsible Sections (Residency style) --- */
+.collapsible {
+  background:#1e3e7b; 
+  color:#fff; 
+  cursor:pointer; 
+  padding:15px 20px;
+  width:100%; 
+  border:none; 
+  border-radius:10px; 
+  text-align:left;
+  font-size:1rem; 
+  margin-bottom:10px; 
+  display:flex; 
+  justify-content:space-between; 
+  align-items:center;
+  transition:background-color 0.3s ease; 
+  font-weight:500;
+}
+.collapsible:hover { background:#2E86C1; }
+.collapsible:after { content:'\25BC'; font-size:1rem; transition:transform 0.35s ease; }
+.collapsible.active:after { transform:rotate(180deg); }
+
+.content-collapsible {
+  max-height:0; 
+  overflow:hidden; 
+  transition:max-height 0.45s ease, padding 0.35s ease; 
+  padding:0 20px; 
+  background:#FDFEFE; 
+  border-left:4px solid #1e3e7b; /* dark blue accent */
+  border-radius:6px; 
+  margin-bottom:15px; 
+  display:block;
+  color:#333;
+}
+
+/* --- Quick Links Buttons --- */
+.links-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:15px; margin-top:15px; }
+.link-btn { display:flex; align-items:center; justify-content:center; gap:8px; padding:12px; font-size:16px; font-weight:500; text-decoration:none; color:#fff; background-color: #1e3e7b; border-radius:10px; box-shadow:0 3px 7px rgba(0,0,0,0.18); transition:transform 0.22s,box-shadow 0.22s; }
+.link-btn:hover { transform:translateY(-3px); box-shadow:0 6px 14px rgba(0,0,0,0.28);background:#2E86C1; }
+
+/* --- Script Generator --- */
+select, button { padding:10px 14px; margin-top:10px; border-radius:7px; border:1px solid #d1d5db; background:#fff; cursor:pointer; font-size:1rem; font-weight:500; }
+button:hover { background:#ececec; }
+.script-output { margin-top:15px; padding:15px; background:#fef3c7; border:1px solid #fde68a; border-radius:6px; white-space:pre-wrap; }
+pre { background:#fff8dc; padding:12px; border-radius:6px; overflow-x:auto; }
+
+/* --- Responsive --- */
+@media(max-width:768px){
+  body{flex-direction:column;}
+  .sidebar{width:100%; flex-direction:row; overflow-x:auto; height:auto; position:relative; padding:10px;}
+  .sidebar a{margin:0 12px; white-space:nowrap;}
+  .content{margin-left:0; padding:22px;}
+  .links-grid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr));}
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+  <h2>Aamer CSR Portal</h2>
+  <a href="index.html" class="active"><i class="fas fa-home"></i>Dashboard</a>
+  <a href="eid.html"><i class="fas fa-id-card"></i>EID Applications</a>
+  <a href="residency.html"><i class="fas fa-passport"></i>Residency Services</a>
+  <a href="goldenvisa.html"><i class="fas fa-crown"></i>Golden Visa</a>
+  <a href="workpermits.html"><i class="fas fa-briefcase"></i>Work Permits & HR</a>
+  <a href="domestic.html"><i class="fas fa-user-friends"></i>Domestic Workers</a>
+  <a href="judicial.html"><i class="fas fa-gavel"></i>Judicial & Legal</a>
+  <a href="attestations.html"><i class="fas fa-file-signature"></i>Attestation & Translation</a>
+  <a href="commercial.html"><i class="fas fa-building"></i>Commercial Licenses</a>
+  <a href="delivery.html"><i class="fas fa-truck"></i>Delivery Services</a>
+  <a href="visa.html"><i class="fas fa-plane"></i>International & Tourism Visa</a>
+  
+</div>
+
+<div class="content">
+  <h1>Aamer CSR Portal - Dashboard</h1>
+
+<div class="card">
+    <h3>What is Aamer?</h3>
+    <p>
+        Aamer is a logistics and service provider that supports both government and private 
+        sector processes. We assist customers with Emirates ID, residency applications, and 
+        related procedures by acting as a bridge between the customer and the government systems. 
+        We operate mainly in Abu Dhabi, with the ability to submit Dubai residency files through email.
+    </p>
+
+    <h4 style="margin-top: 12px; font-size: 1.05rem;">Departments (high-level)</h4>
+    <ul style="margin-top: 8px; padding-left: 18px; line-height: 1.55;">
+        <li><strong>Residency, Emirates ID & Tourism Department</strong><br>
+            Handles all residency services, Emirates ID, biometrics, Golden Visa, 
+            and tourism-related visa services.</li>
+
+        <li><strong>Commercial & Digital Services Department</strong><br>
+            Manages commercial licenses, trade licenses, freelance permits, attestations, 
+            document translations, and digital verification tasks.</li>
+
+        <li><strong>Domestic Workers & Work Permits Department</strong><br>
+            Handles domestic worker visas, renewals, cancellations, and all types of employee work permits.</li>
+
+        <li><strong>Aamer Hub</strong><br>
+            Supports typing centers and partner offices with registration, onboarding, and system access.</li>
+    </ul>
+</div>
+
+<!-- Quick Links -->
+<div class="card">
+    <h2>Quick Links to Work Tools</h2>
+    <div class="links-grid">
+      <a href="https://pqms05.extensya.com" target="_blank" class="link-btn">🪪 KB</a>
+      <a href="https://aamer.extensyaidesk.com" target="_blank" class="link-btn">📚 iDesk</a>
+      <a href="https://aamerbackoffice.azurewebsites.net" target="_blank" class="link-btn">📕 Aamer Hub</a>
+      <a href="https://egate.extensya.com" target="_blank" class="link-btn">💻 egate</a>
+      <a href="https://portal.mq.maqsam.com" target="_blank" class="link-btn">📞 maqsam</a>
+      <a href="https://mail.extensya.com" target="_blank" class="link-btn">✉️ mail</a>
+      <a href="https://smartservices.icp.gov.ae" class="link-btn">🗂 ICP Portal</a>
+      <a href="https://docs.google.com/spreadsheets/d/1f-TIAC7VPXlqRVkEkpdoPAaEx-5E1PB2CmqlBbzDq6c/edit?usp=sharing" class="link-btn">📄 AAMER Social Media Leads</a>
+      <a href="https://docs.google.com/spreadsheets/d/1kWqL3ZoVAVtEZr-lm1FSMh96DEjeNEYLBSkXdecH_z0/edit?usp=sharing" class="link-btn">📄 VOC</a>
+    </div>
+
+
+<!-- Announcements -->
+
+    <button class="collapsible">Announcements / Updates</button>
+    <div class="content-collapsible">
+      <ul>
+        <li>Golden Visa nomination process updated – check the Aamer App.</li>
+        <li>Domestic worker visa fees may change; confirm via app.</li>
+        <li>All judicial cases must still be submitted through the app.</li>
+      </ul>
+    </div>
+
+
+<!-- Tips -->
+
+    <button class="collapsible">Tips for Agents</button>
+    <div class="content-collapsible">
+      <ul>
+        <li>Always ask for Name & Application/Job ID first.</li>
+        <li>Confirm type of service (Normal/Gold, Renewal/New, etc.).</li>
+        <li>Guide clients to submit via Aamer App for judicial and legal cases.</li>
+        <li>Use Script Generator for accurate responses.</li>
+      </ul>
+    </div>
+ </div>
+
+
+</div>
+
+<script>
+
+// --- Script Generator ---
+const scripts = {
+  eid: "CSR Script: Check EID Application ID / Job ID, confirm payment, provide pickup/delivery details.",
+  residency_normal: "CSR Script: Normal residency includes spouse + children. Parents cannot be added.",
+  residency_golden: "CSR Script: Golden residency includes spouse, children, and parents.",
+  goldenvisa: "CSR Script: Submit nomination first through Aamer app, then apply for Golden Visa.",
+  judicial: "CSR Script: All judicial cases must be submitted through the Aamer app. CSR cannot access files.",
+  workpermits: "CSR Script: Provide work permit, company file, job offer guidance. Submit request through app.",
+  domestic: "CSR Script: Handle domestic worker visa, renewal, cancellation. Submit via app.",
+  attestations: "CSR Script: Translation and attestation of documents. Submit originals through app.",
+  commercial: "CSR Script: Assist with licenses, trade name, freelance, economic license. Submit request via app.",
+  delivery: "CSR Script: Delivery, pickup, return services. Schedule and fees via app.",
+  visa: "CSR Script: UAE multi-entry, Saudi tourism visas. Apply via app."
+};
+
+function generateScript() {
+  const service = document.getElementById('serviceSelect').value;
+  const output = document.getElementById('scriptOutput');
+  output.textContent = scripts[service] || "Please select a valid service.";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Golden Visa Services - Aamer CSR Portal</title>
+
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<style>
+/* --- Reset & Basic --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family:'DM Sans',sans-serif; background-color: #f0f0f0; color:#333; display:flex; min-height:100vh; }
+
+/* --- Sidebar --- */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg,#0a0146 0%,#1f3f7c 50%,#2e86c1 100%);
+  color:#fff; flex-shrink:0; display:flex; flex-direction:column;
+  padding:22px; position:fixed; height:100%; overflow-y:auto;
+  border-right:1px solid rgba(255,255,255,0.15);
+}
+.sidebar h2 { font-family:'Libre Baskerville',serif; font-size:1.7rem; margin-bottom:28px; color:#fff; }
+.sidebar a { color:#fff; text-decoration:none; margin:6px 0; display:flex; align-items:center;
+  padding:12px 14px; border-radius:8px; transition:0.25s; font-size:1rem; font-weight:500; }
+.sidebar a i { margin-right:10px; font-size:1.1rem; opacity:0.9; }
+.sidebar a:hover { background:rgba(41, 128, 185, 0.2); } /* soft dark blue hover */
+.sidebar a.active { background:rgba(41, 128, 185, 0.35); font-weight:550; }
+
+/* --- Content --- */
+.content{margin-left:300px;flex:1;padding:34px 48px;overflow-y:auto}
+h1,h2,h3{font-family:'Libre Baskerville',serif;color:#0a0146;margin-bottom:12px}
+p,li{font-size:1rem;line-height:1.6;color:#24303a;margin-bottom:8px}
+
+/* --- Card --- */
+.card{background:#fff;border-radius:12px;padding:20px;margin-bottom:22px;box-shadow:0 6px 18px rgba(10,6,70,0.05)}
+.card h3{margin-bottom:10px}
+
+/* --- Collapsible Sections (Residency style) --- */
+.collapsible {
+  background:#1e3e7b; 
+  color:#fff; 
+  cursor:pointer; 
+  padding:15px 20px;
+  width:100%; 
+  border:none; 
+  border-radius:10px; 
+  text-align:left;
+  font-size:1rem; 
+  margin-bottom:10px; 
+  display:flex; 
+  justify-content:space-between; 
+  align-items:center;
+  transition:background-color 0.3s ease; 
+  font-weight:500;
+}
+.collapsible:hover { background:#2E86C1; }
+.collapsible:after { content:'\25BC'; font-size:1rem; transition:transform 0.35s ease; }
+.collapsible.active:after { transform:rotate(180deg); }
+
+.content-collapsible {
+  max-height:0; 
+  overflow:hidden; 
+  transition:max-height 0.45s ease, padding 0.35s ease; 
+  padding:0 20px; 
+  background:#FDFEFE; 
+  border-left:4px solid #1e3e7b; /* dark blue accent */
+  border-radius:6px; 
+  margin-bottom:15px; 
+  display:block;
+  color:#333;
+}
+.content-inner{padding:14px 0}
+.service-title{font-weight:700;color:#0a0146;margin-bottom:6px}
+
+/* --- Small helpful badge --- */
+.badge{display:inline-block;background:#eef6ff;color:#1a3f7c;padding:6px 10px;border-radius:999px;font-weight:600;font-size:.95rem;margin-right:8px}
+
+/* --- Notes box --- */
+.note{background:#fff7e6;border:1px solid #fde3a8;padding:12px;border-radius:8px;margin-top:10px}
+
+/* --- Links grid --- */
+.links-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:12px}
+.link-btn{display:flex;align-items:center;justify-content:center;gap:6px;padding:10px;border-radius:8px;background-color:#1e3e7b;color:#fff;text-decoration:none;font-weight:500}
+.link-btn:hover { transform:translateY(-3px); box-shadow:0 6px 14px rgba(0,0,0,0.28);background:#2E86C1; }
+
+/* --- Responsive --- */
+@media(max-width:900px){
+  .content{margin-left:14px;padding:20px}
+  .sidebar{position:relative;width:100%;height:auto;margin-bottom:10px}
+}
+</style>
+</head>
+
+<body>
+  <div class="sidebar">
+    <h2>Aamer CSR Portal</h2>
+    <a href="index.html"><i class="fas fa-home"></i>Dashboard</a>
+    <a href="eid.html"><i class="fas fa-id-card"></i>EID Applications</a>
+    <a href="residency.html"><i class="fas fa-passport"></i>Residency Services</a>
+    <a href="goldenvisa.html" class="active"><i class="fas fa-crown"></i>Golden Visa</a>
+    <a href="workpermits.html"><i class="fas fa-briefcase"></i>Work Permits & HR</a>
+    <a href="domestic.html"><i class="fas fa-user-friends"></i>Domestic Workers</a>
+    <a href="judicial.html"><i class="fas fa-gavel"></i>Judicial & Legal</a>
+    <a href="attestations.html"><i class="fas fa-file-signature"></i>Attestation & Translation</a>
+    <a href="commercial.html"><i class="fas fa-building"></i>Commercial Licenses</a>
+    <a href="delivery.html"><i class="fas fa-truck"></i>Delivery Services</a>
+    <a href="visa.html"><i class="fas fa-plane"></i>International & Tourism Visa</a>
+    
+  </div>
+
+  <main class="content" role="main">
+    <h1>Golden Visa Services</h1>
+
+    <div class="card">
+      <h3>Overview</h3>
+      <p><strong>Purpose:</strong> Abu Dhabi Golden Visa provides long-term residency — <strong>10 years</strong> — for investors, entrepreneurs, outstanding talents, students, family members, and specialized categories.</p>
+      <p><strong>CSR Guidance:</strong> Agents must confirm eligibility, verify required documents (listed in each section), follow the CSR workflow, and provide accurate guidance. All steps and evidence must be checked before submission.</p>
+
+      <div style="margin-top:10px" class="links-grid">
+        <a class="link-btn" href="residency.html">Residency reference</a>
+        <a class="link-btn" href="eid.html">EID / Biometrics</a>
+        <a class="link-btn" href="https://smartservices.icp.gov.ae" target="_blank">ICP Portal</a>
+      </div>
+
+      <div class="note">
+        <strong>Processing time (general guidance):</strong> most Golden Visa operations: <em>1–14 working days</em> depending on category & government entity. Always confirm exact SLA via the Aamer App / Hub / EMERGE.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Golden Visa Categories — Full Details</h3>
+
+      <!-- ADRO note -->
+      <button class="collapsible">ADRO (nomination flow)</button>
+      <div class="content-collapsible">
+        <div class="content-inner">
+          <div class="service-title">What it is</div>
+          <p>Some categories require nomination through the Abu Dhabi Residence Office (ADRO) or a local nominating authority. If the nomination is already submitted through ADRO, the customer must not resubmit via the app — check ADRO status first.</p>
+
+          <div class="service-title">CSR notes</div>
+          <ul style="padding-left:18px">
+            <li>If ADRO nomination exists, the app will indicate that. Confirm with the customer the ADRO reference before proceeding.</li>
+            <li>Do not duplicate nominations — this creates processing delays.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Three steps service -->
+      <button class="collapsible">Three-Steps Service (Change Status / Emergency ID / Residency)</button>
+      <div class="content-collapsible">
+        <div class="content-inner">
+          <div class="service-title">Service Includes</div>
+          <ul style="padding-left:18px">
+            <li>Change status (where applicable)</li>
+            <li>Emergency ID / Emirates ID typing</li>
+            <li>Golden Visa residency application</li>
+          </ul>
+
+          <div class="service-title">Visa Validity</div>
+          <p>10 years.</p>
+
+          <div class="service-title">Service Fee (example placeholder)</div>
+          <p>4,400 AED (incl. 5% VAT) — placeholder; final price list to be applied later.</p>
+        </div>
+      </div>
+
+      <!-- Non-real estate investor -->
+      <button class="collapsible">Investor — Non-Real Estate (Abu Dhabi)</button>
+      <div class="content-collapsible">
+        <div class="content-inner">
+          <div class="service-title">General information</div>
+          <p>The Abu Dhabi non-real-estate investor Golden Visa is intended for investors who place capital in companies, deposits, or pay sufficient tax in the UAE. This visa covers spouse(s), children, one advisor, and one executive director (where applicable).</p>
+
+          <div class="service-title">Eligibility criteria</div>
+          <ul style="padding-left:18px">
+            <li>Minimum investment value: <strong>AED 2,000,000</strong>, which can be in the form of a deposit with a UAE-licensed bank or an investment fund, or share capital in a company.</li>
+            <li>Or evidence of taxes paid to the UAE government of at least AED 250,000 per year for the two (2) years prior to application (tax-based route).</li>
+            <li>If investor owns shares (example): if investor owns 25% of a company paying AED 1,000,000 taxes/year, investor must show evidence of paying AED 250,000/year (i.e., investor’s share of taxes).</li>
+            <li>Must maintain investment as per category rules (timing and retention depend on the investment type).</li>
+          </ul>
+
+          <div class="service-title">Requirements / Relevant documents (exact)</div>
+          <ul style="padding-left:18px">
+            <li>Valid passport copy (clear scan)</li>
+            <li>Proof of identity (as required)</li>
+
+            <li><strong>For fixed-deposit investors:</strong>
+              <ul style="padding-left:14px;">
+                <li>Statement issued by an investment fund or a UAE-licensed bank confirming deposit of at least AED 2,000,000 for a period of not less than two (2) years.</li>
+              </ul>
+            </li>
+
+            <li><strong>For company investors / partnership:</strong>
+              <ul style="padding-left:14px;">
+                <li>Valid trade license of the company (showing incorporation in the UAE).</li>
+                <li>Updated Commercial Registration (CRSC) certificate evidencing capital paid in and each investor’s share ownership percentage.</li>
+                <li>Bank or investment fund letter showing the capital value of the investor’s share and that the capital (or equivalent) has been deposited — amount not less than AED 2,000,000.</li>
+                <li>Copy of the company’s commercial register / CR.</li>
+                <li>Evidence there are no legal attachments or judicial seizures against the company or investor’s shares (search certificates).</li>
+              </ul>
+            </li>
+
+            <li><strong>For tax-based investors:</strong>
+              <ul style="padding-left:14px;">
+                <li>Valid trade license of the company.</li>
+                <li>CRSC showing capital and ownership percentage.</li>
+                <li>Tax return forms evidencing tax paid of at least AED 250,000 per year for each of the two (2) years preceding the application.</li>
+                <li>Tax receipts to support the tax filings.</li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class="service-title">Processing steps (exact)</div>
+          <ol style="padding-left:18px">
+            <li>Collect all required documents in original / certified copies as required (bank letters, CR, tax returns, trade license).</li>
+            <li>Verify authenticity — check bank/investment letters for stamps/signatures and CRSC for up-to-date info.</li>
+            <li>Submit nomination/application through ADRO or EMERGE as required by the specific investor route.</li>
+            <li>Track ADRO / ICP / relevant authority responses; respond to any requests for clarification / additional documents immediately.</li>
+            <li>On approval, proceed with Emirates ID typing, residency issuance, and final customer notification.</li>
+          </ol>
+
+          <div class="service-title">Service duration</div>
+          <p>Typically <strong>1–2 weeks</strong> after receiving complete documents; final government processing times may vary.</p>
+
+          <div class="service-title">Service fee (placeholder)</div>
+          <p>5,300 AED (incl. 5% VAT) — placeholder (you will provide final price list to update).</p>
+
+          <div class="service-title">CSR notes & escalations</div>
+          <ul style="padding-left:18px">
+            <li>Confirm that bank / investment fund letters show the AED 2,000,000 amount and the required holding period.</li>
+            <li>If investor is relying on tax evidence, verify tax returns and receipts for the two prior years and document the annual tax amount.</li>
+            <li>If the investor is a shareholder, ensure share percentage and paid capital match the CRSC and bank evidence.</li>
+            <li>Escalate to operations if any mismatch or if ADRO/authority asks for missing attachments.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Real estate investors -->
+      <button class="collapsible">Investor — Real Estate (Abu Dhabi)</button>
+      <div class="content-collapsible">
+        <div class="content-inner">
+          <div class="service-title">General information</div>
+          <p>The Abu Dhabi real estate investor Golden Visa is for applicants who invest in property in the UAE and meet the minimum thresholds. Visa includes spouse(s) and children.</p>
+
+          <div class="service-title">Eligibility criteria</div>
+          <ul style="padding-left:18px">
+            <li>Must own real estate with a minimum total value of <strong>AED 2,000,000</strong>.</li>
+            <li>Must maintain the investment for at least two (2) years after issuance of the Golden Visa (retention period applies).</li>
+            <li>Mortgage rules: mortgages through national banks are permitted; investor capital requirements vary based on outstanding mortgage principal (examples included below).</li>
+          </ul>
+
+          <div class="service-title">Required / Relevant documents (exact)</div>
+          <ul style="padding-left:18px">
+            <li>Valid passport copy.</li>
+            <li>Purchase agreement registered with the Department of Municipalities & Transport (DMT) or the competent real estate registration authority in the emirate (showing purchaser, property, address, and value at purchase — must be ≥ AED 2,000,000).</li>
+            <li>Real estate unit value certificate issued by DMT or the competent authority confirming property value.</li>
+            <li>Title deed / ownership certificate.</li>
+            <li>Evidence that the property is not subject to judicial seizure (search certificate).</li>
+            <li>For off-plan purchases: purchase agreement from an approved developer and proof of payments made to date showing at least AED 2,000,000 paid to the developer (if relying on off-plan payments route).</li>
+            <li>If mortgage exists: mortgage documentation and bank statements; ensure investor’s capital (equity) meets policy thresholds (e.g., for a property worth AED 5,000,000, outstanding mortgage principal must not exceed AED 3,000,000 so investor equity ≥ AED 2,000,000).</li>
+          </ul>
+
+          <div class="service-title">Processing steps (exact)</div>
+          <ol style="padding-left:18px">
+            <li>Collect purchase agreements, unit value certificates and title deed; verify developer authenticity for off-plan.</li>
+            <li>Confirm property value (DMT) and absence of judicial attachments.</li>
+            <li>Submit nomination/application through EMERGE / ADRO as instructed.</li>
+            <li>Monitor government approvals; complete Emirates ID typing and residency issuance when approved.</li>
+          </ol>
+
+          <div class="service-title">Service duration</div>
+          <p>Typically <strong>1–2 weeks</strong> after receiving complete documents (government timing may vary).</p>
+
+          <div class="service-title">Service fee (placeholder)</div>
+          <p>5,300 AED (incl. 5% VAT) — placeholder.</p>
+
+          <div class="service-title">CSR notes</div>
+          <ul style="padding-left:18px">
+            <li>Confirm DMT registration and search certificate — if property is seized or attached, explain the issue and escalate.</li>
+            <li>For off-plan, ensure payments to the developer show the AED 2,000,000 threshold (or that outstanding contract conditions are met).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Entrepreneurs -->
+      <button class="collapsible">Entrepreneurs (Startup / SME)</button>
+      <div class="content-collapsible">
+        <div class="content-inner">
+          <div class="service-title">General information</div>
+          <p>Entrepreneur category covers founders, partners or owners of start-ups and SMEs with qualifying projects or prior successful exits. Applications are often nominated by an accredited business incubator, UAE authority, or through ADRO/EMERGE submission.</p>
+
+          <div class="service-title">Eligibility criteria (detailed)</div>
+          <ul style="padding-left:18px">
+            <li>Owner or partner who has obtained approval for a business concept by an approved incubator / authority (e.g., Ministry of Economy, ICP, or a competent local authority).</li>
+            <li>The business project must be classified as an SME and typically demonstrate annual revenue of at least <strong>AED 1,000,000</strong> (where applicable depending on the authority rules).</li>
+            <li>Founders of previous pioneering projects that were sold for a total value of at least <strong>AED 7,000,000</strong> (subject to approval by the relevant authority) are eligible as founders of successful exit projects.</li>
+            <li>Approval / nomination by a recognized UAE entity (business incubator, Ministry of Economy, ADRO nomination) is usually required.</li>
+          </ul>
+
+          <div class="service-title">Requirements / Relevant documents (exact)</div>
+          <ul style="padding-left:18px">
+            <li>Valid passport copy.</li>
+            <li>Trade license copy for the current business (or previous project for founders).</li>
+            <li>Nomination issued by the business incorporated in the UAE (if applicable) — applications made through the Abu Dhabi Residence Office web app may be auto-sent to the relevant nominating business/incubator.</li>
+            <li>Business concept overview deck (for concept approvals).</li>
+            <li>Company profile, financial statements for the past two years (if available / required).</li>
+            <li>LinkedIn profile of the founder(s) and/or acceptance letters from recognized incubators (e.g., Hub71) or venture entities.</li>
+            <li>For founders of previously sold projects: proof of sale showing total value ≥ AED 7,000,000 and documentation of the transaction, plus the previous project trade license.</li>
+          </ul>
+
+          <div class="service-title">Processing steps (exact)</div>
+          <ol style="padding-left:18px">
+            <li>Collect trade license, company profile, financials, nomination and founder documents.</li>
+            <li>Verify documentation authenticity and sale evidence (if founder of a sold project).</li>
+            <li>Submit nomination / application via EMERGE or ADRO to the relevant authority.</li>
+            <li>Follow up with nominating authority for endorsement and then proceed to ICP/EMIRATES ID typing on approval.</li>
+          </ol>
+
+          <div class="service-title">Service duration</div>
+          <p>Typically <strong>1–2 weeks</strong> after receiving complete documents; timing depends on nominating authority and government approvals.</p>
+
+          <div class="service-title">Service fee (placeholder)</div>
+          <p>4,750 AED (incl. 5% VAT) — placeholder.</p>
+
+          <div class="service-title">CSR notes</div>
+          <ul style="padding-left:18px">
+            <li>Ensure founders provide verifiable sale documents for previous projects (if applying on that basis).</li>
+            <li>Confirm incubator / authority approval letters are official and include the business concept reference.</li>
+            <li>Escalate to operations if financial evidence is incomplete or sale documents are not certified.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Brilliant Talents (On Hold) -->
+      <button class="collapsible">Brilliant Talents — Athletes / Creatives / Top Talents / Distinguished Professionals (HOLD)</button>
+      <div class="content-collapsible">
+        <div class="content-inner">
+          <div class="service-title">General information</div>
+          <p>Brilliant Talents includes athletes, creatives in art & culture, inventors, top talents, and distinguished professionals. Note: you indicated this category is currently on hold — include the following requirements and nomination flows for training purposes.</p>
+
+          <div class="service-title">Categories & eligibility (detailed)</div>
+          <ul style="padding-left:18px">
+            <li><strong>Athletes:</strong> outstanding athletic talent; leading position in an international sports federation or recommendation from Abu Dhabi Sports Council.</li>
+            <li><strong>Creatives in Art & Culture:</strong> global recognition or international awards, sponsorships or grants, evidence of exceptional creative work.</li>
+            <li><strong>Top Talents:</strong> local/regional recognition, awards, certificates of appreciation from recognized entities.</li>
+            <li><strong>Distinguished Professionals:</strong> minimum five (5) years of professional work in an intellectual or creative field; creative work published/recognized within last 3 years; membership or recognition by reputable local/regional/international entities.</li>
+            <li><strong>Inventors:</strong> recommendation letter from Ministry of Economy, patents or invention documentation (see requirements below).</li>
+          </ul>
+
+          <div class="service-title">Requirements / Relevant documents (exact)</div>
+          <ul style="padding-left:18px">
+            <li>Passport copy and valid health insurance.</li>
+            <li>CV / resume and portfolio or samples of creative work (where applicable).</li>
+            <li>Certificates, awards, patents, or evidence of achievements.</li>
+            <li>Recommendation or nomination letter from the relevant authority (e.g., Abu Dhabi Sports Council, Ministry of Economy, Department of Culture & Arts).</li>
+            <li>For creatives and distinguished professionals: evidence of at least 10 years (where required) or 5 years of recognized work and media/critic recognition as applicable.</li>
+          </ul>
+
+          <div class="service-title">Processing steps (exact)</div>
+          <ol style="padding-left:18px">
+            <li>Collect portfolio, CV, certificates, recommendation letters and any proof of awards/patents.</li>
+            <li>Verify nomination route — ADRO or specific nominating authority (sports council, culture department, ministry).</li>
+            <li>Submit application via the Abu Dhabi Residence Office web app / EMERGE (auto-send for nominations where applicable).</li>
+            <li>Follow up with nominating authority and proceed with Emirates ID typing & residency issuance after approval.</li>
+          </ol>
+
+          <div class="service-title">CSR notes</div>
+          <ul style="padding-left:18px">
+            <li>Note that this category may be put on hold by authorities — always confirm nomination acceptance before instructing customers to pay or proceed.</li>
+            <li>Ensure recommendation letters are official, dated, and bear an authorised stamp or signature.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Inventors (if separate) -->
+      <button class="collapsible">Inventors</button>
+      <div class="content-collapsible">
+        <div class="content-inner">
+          <div class="service-title">General information</div>
+          <p>Inventors route requires technical review and recommendation by Ministry of Economy or relevant authority (patent verification, invention assessment, etc.).</p>
+
+          <div class="service-title">Requirements / Relevant documents (exact)</div>
+          <ul style="padding-left:18px">
+            <li>Passport copy, CV, and valid health insurance.</li>
+            <li>Patent documentation, invention description, prototypes, or technical papers.</li>
+            <li>Recommendation letter from Ministry of Economy or competent authority supporting the invention/patent.</li>
+          </ul>
+
+          <div class="service-title">Processing steps</div>
+          <ol style="padding-left:18px">
+            <li>Collect invention documentation and ministry recommendation letters.</li>
+            <li>Submit for technical assessment and nomination through ADRO/EMERGE as required.</li>
+            <li>Proceed to ICP/Emirates ID typing on approval.</li>
+          </ol>
+
+          <div class="service-title">CSR notes</div>
+          <ul style="padding-left:18px">
+            <li>Verify patents / invention references with the issuing authority where possible.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- University graduates -->
+      <button class="collapsible">University Graduates (UAE & International)</button>
+      <div class="content-collapsible">
+        <div class="content-inner">
+          <div class="service-title">General information</div>
+          <p>Golden Visa for university graduates (recent graduates) — degree must be attested and graduate year must be within the last two (2) years.</p>
+
+          <div class="service-title">Eligibility criteria (exact)</div>
+          <ul style="padding-left:18px">
+            <li><strong>Graduates of universities in the UAE:</strong> Hold Bachelor, Master, or PhD from a university accredited by the UAE Ministry of Education. The university classification (A or B) determines GPA threshold:</li>
+            <ul style="padding-left:14px;">
+              <li>GPA must not be less than <strong>3.5</strong> for A-classified universities.</li>
+              <li>GPA must not be less than <strong>3.8</strong> for B-classified universities. <!-- as per your input --> </li>
+            </ul>
+            <li>Graduation year must not be more than two (2) years ago.</li>
+
+            <li><strong>Graduates of universities outside the UAE (Bachelor’s degree only):</strong>
+              <ul style="padding-left:14px;">
+                <li>The university must be listed among the top 100 international universities according to the classification used by the UAE Ministry of Education.</li>
+                <li>GPA must not be less than <strong>3.5</strong> (for bachelor's).</li>
+                <li>Graduation year must not be more than two (2) years ago.</li>
+                <li>Degree must be attested and equivalency provided by the UAE Ministry of Education.</li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class="service-title">Required / Relevant documents (exact)</div>
+          <ul style="padding-left:18px">
+            <li>Valid passport copy.</li>
+            <li>Official degree certificate(s) (Bachelor/Master/PhD where applicable), attested by the UAE Ministry of Education.</li>
+            <li>Official transcripts evidencing final GPA.</li>
+            <li>Equivalency / attestation certificates for international degrees (where applicable).</li>
+            <li>Proof that graduation year ≤ 2 years.</li>
+          </ul>
+
+          <div class="service-title">Processing steps</div>
+          <ol style="padding-left:18px">
+            <li>Collect degree, transcript and attestation / equivalency.</li>
+            <li>Verify GPA threshold and university classification or top-100 status for international degrees.</li>
+            <li>Submit application via ADRO/EMERGE for nomination (ADEK / Ministry check where required).</li>
+            <li>Follow up with nominating authority and proceed with Emirates ID typing & residence issuance once approved.</li>
+          </ol>
+
+          <div class="service-title">Service duration</div>
+          <p>Typically <strong>1–2 weeks</strong> after receiving all documents; depends on ministry processing and attestation timelines.</p>
+
+          <div class="service-title">CSR notes</div>
+          <ul style="padding-left:18px">
+            <li>Degree attestation / equivalency is mandatory for international degrees — verify before submission.</li>
+            <li>Confirm graduation date is within two (2) years — if not, advise customer they are not eligible under this fresh-graduate route.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- High school graduates -->
+      <button class="collapsible">High School Top-Ranked Students</button>
+      <div class="content-collapsible">
+        <div class="content-inner">
+          <div class="service-title">General information</div>
+          <p>Golden Visa for top high-school students in the UAE (public or licensed private schools) — nomination is by the Abu Dhabi Department of Education & Knowledge (ADEK) or the Ministry of Education as appropriate.</p>
+
+          <div class="service-title">Eligibility criteria</div>
+          <ul style="padding-left:18px">
+            <li>Final Grade 12 certificate with a score of at least <strong>95%</strong> (or meeting the specific criteria set by ADEK / Ministry of Education).</li>
+            <li>Nomination / recommendation from Ministry of Education / ADEK (automatic nominations via Abu Dhabi Residence Office web app where applicable).</li>
+          </ul>
+
+          <div class="service-title">Required / Relevant documents (exact)</div>
+          <ul style="padding-left:18px">
+            <li>Grade 12 certificate (attested where required).</li>
+            <li>Recommendation letter from the Ministry of Education or ADEK nomination evidence.</li>
+            <li>Passport copy and any school documentation required by the nominating authority.</li>
+          </ul>
+
+          <div class="service-title">Processing steps</div>
+          <ol style="padding-left:18px">
+            <li>Confirm nomination by ADEK / Ministry or submit application via Abu Dhabi Residence Office web app (auto forwards to Ministry where set up).</li>
+            <li>Verify Grade 12 score and required nomination evidence.</li>
+            <li>Proceed with Emirates ID typing & residency issuance on approval.</li>
+          </ol>
+
+          <div class="service-title">Service duration</div>
+          <p>Typically <strong>1–2 weeks</strong> after receiving documents and nomination.</p>
+        </div>
+      </div>
+
+      <!-- Family members (Inside UAE) -->
+      <button class="collapsible">Family Members — Inside UAE (New) — 10 Years</button>
+      <div class="content-collapsible">
+        <div class="content-inner">
+          <div class="service-title">Service includes</div>
+          <ul style="padding-left:18px">
+            <li>Golden Visa residence visa application</li>
+            <li>Emirates ID typing (EMERGE / typing service)</li>
+            <li>Change status if required (inside UAE flows)</li>
+          </ul>
+
+          <div class="service-title">Important notes</div>
+          <p>The residence visa shall be valid maximum for 180 days until stamping/issuance is completed.</p>
+
+          <div class="service-title">Required documents (exact)</div>
+          <ul style="padding-left:18px">
+            <li>Dependent passport copy (clear scan)</li>
+            <li>Sponsor (Golden Visa holder) passport copy / ID</li>
+            <li>Marriage certificate / birth certificate for dependents (attested/certified where required)</li>
+            <li>Proof of accommodation / housing (if requested)</li>
+            <li>EMERGE application form and any Emirates ID typing forms</li>
+          </ul>
+
+          <div class="service-title">Processing steps</div>
+          <ol style="padding-left:18px">
+            <li>Collect dependent and sponsor documents — ensure certificates are attested where necessary.</li>
+            <li>Submit application via EMERGE; select inside-UAE dependent/New visa flow.</li>
+            <li>Verify change-of-status details (if applicant is switching from another visa) and proceed with Emirates ID typing.</li>
+            <li>Track application; notify customer of reference numbers and expected timelines.</li>
+          </ol>
+
+          <div class="service-title">Service duration</div>
+          <p>EMERGE processing typically <strong>1–2 business days</strong> after documents & payment are received; government processing varies.</p>
+
+          <div class="service-title">Service fee (as provided earlier)</div>
+          <p>3,200 AED (incl. 5% VAT) — placeholder; update when final price list is shared.</p>
+
+          <div class="service-title">CSR notes</div>
+          <ul style="padding-left:18px">
+            <li>Confirm dependent relationship documents are attested and consistent with sponsor data.</li>
+            <li>Explain the 180-day maximum validity of the temporary residence until final stamping.</li>
+            <li>Always provide the customer with reference numbers and receipt copies.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Family members (Outside UAE) -->
+      <button class="collapsible">Family Members — Outside UAE (New) — 10 Years</button>
+      <div class="content-collapsible">
+        <div class="content-inner">
+          <div class="service-title">Service includes</div>
+          <ul style="padding-left:18px">
+            <li>Visa application (entry permit / stamping flow)</li>
+            <li>Emirates ID typing</li>
+            <li>Golden Visa residence visa application</li>
+          </ul>
+
+          <div class="service-title">Required documents (exact)</div>
+          <ul style="padding-left:18px">
+            <li>Dependent passport copy (clear scan)</li>
+            <li>Sponsor passport / Golden Visa holder ID</li>
+            <li>Marriage / birth certificates (attested where required)</li>
+            <li>Proof of housing if requested</li>
+          </ul>
+
+          <div class="service-title">Processing steps</div>
+          <ol style="padding-left:18px">
+            <li>Collect all documents and ensure attestation where needed.</li>
+            <li>Submit visa application via EMERGE for outside-UAE family members.</li>
+            <li>Coordinate with consulate/immigration for stamping if required and complete Emirates ID typing when resident enters UAE.</li>
+          </ol>
+
+          <div class="service-title">Service duration</div>
+          <p>EMERGE processing: <strong>1–2 business days</strong> after receiving documents; external stamping time varies.</p>
+
+          <div class="service-title">Service fee (as provided earlier)</div>
+          <p>4,200 AED (incl. 5% VAT) — placeholder.</p>
+        </div>
+      </div>
+
+      <!-- Family members — Renewals -->
+      <button class="collapsible">Family Members — Renewal (Inside UAE)</button>
+      <div class="content-collapsible">
+        <div class="content-inner">
+          <div class="service-title">General</div>
+          <p>Renewal of Golden Visa family member residency. The renewed Golden Visa remains a 10-year residency (subject to approval).</p>
+
+          <div class="service-title">Required documents</div>
+          <ul style="padding-left:18px">
+            <li>Current residence page / permit copy</li>
+            <li>Dependent passport copy</li>
+            <li>Sponsor documents (Golden Visa holder)</li>
+          </ul>
+
+          <div class="service-title">Processing steps</div>
+          <ol style="padding-left:18px">
+            <li>Collect current permit, passport, and sponsor documents.</li>
+            <li>Submit renewal request via EMERGE; confirm Emirates ID typing if renewal requires new typing.</li>
+            <li>Track application and inform customer of renewal status.</li>
+          </ol>
+
+          <div class="service-title">Service duration</div>
+          <p>EMERGE processing: <strong>1–2 business days</strong>. Government timelines vary.</p>
+
+          <div class="service-title">Service fee (placeholder)</div>
+          <p>4,750 AED (incl. 5% VAT) — placeholder.</p>
+        </div>
+      </div>
+
+      <!-- Multiple entry permit -->
+      <button class="collapsible">Multiple Entry Permit (6 Months) — to finalise Golden Residency</button>
+      <div class="content-collapsible">
+        <div class="content-inner">
+          <div class="service-title">Purpose</div>
+          <p>Temporary multiple entry permit to finalise procedures for the Golden Residency (valid 6 months).</p>
+
+          <div class="service-title">Who is included</div>
+          <p>Outstanding specialized talents (doctors, scientists, athletes, inventors, creatives, executive directors, PhD holders, pioneers of humanitarian work) and other categories as specified by the authority.</p>
+
+          <div class="service-title">Required documents (exact)</div>
+          <ul style="padding-left:18px">
+            <li>Passport copy</li>
+            <li>Valid health insurance</li>
+            <li>Category specific letters / approvals (e.g., ministry letters, sports council letters, patents).</li>
+          </ul>
+
+          <div class="service-title">Processing steps</div>
+          <ol style="padding-left:18px">
+            <li>Submit required documents via EMERGE for multiple-entry permit route.</li>
+            <li>Coordinate issuance and advise customer about the 6-month window to finalize Golden Residency procedures in the UAE.</li>
+          </ol>
+
+          <div class="service-title">Service duration</div>
+          <p>Typically <strong>1–2 business days</strong> internal EMERGE processing; final government timelines vary.</p>
+
+          <div class="service-title">Service fee (placeholder)</div>
+          <p>5,300 AED (incl. 5% VAT) — placeholder.</p>
+        </div>
+      </div>
+
+      <!-- Frontline workers -->
+      <button class="collapsible">Frontline Workers (Nurses, Lab Techs, Pharmacists, etc.)</button>
+      <div class="content-collapsible">
+        <div class="content-inner">
+          <div class="service-title">General</div>
+          <p>Frontline heroes (nurses, medical assistants, lab technicians, pharmacologists and other cadres approved by the Frontline Heroes Office).</p>
+
+          <div class="service-title">Important service rules</div>
+          <ul style="padding-left:18px">
+            <li>Application will be automatically canceled after 30 days if returned due to missing data or incomplete documents.</li>
+            <li>Application will be canceled if returned 3 times for missing data or incomplete documents.</li>
+            <li>Issuance fees refunded only if application was rejected by the Federal Authority for Identity and Citizenship (ICP).</li>
+          </ul>
+
+          <div class="service-title">Typical fees breakdown (example)</div>
+          <ul style="padding-left:18px">
+            <li>ICP Fees: 1,268.48 AED</li>
+            <li>Aamer Fees: 200.00 AED (placeholder)</li>
+            <li>Travel Insurance: 275.36 AED</li>
+            <li>E-Services Fees: 41.64 AED</li>
+            <li>VAT: 25.00 AED</li>
+            <li><strong>Total Example:</strong> 1,810.48 AED</li>
+          </ul>
+
+          <div class="service-title">Service duration</div>
+          <p>EMERGE processing: <strong>1–2 working days</strong> after receiving documents & payment; government processing varies.</p>
+
+          <div class="service-title">CSR notes</div>
+          <ul style="padding-left:18px">
+            <li>Advise customers about auto-cancellation rules and ensure complete document submission to avoid cancellations.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Humanitarian -->
+      <button class="collapsible">Pioneers of Humanitarian Work / Humanitarian Funding</button>
+      <div class="content-collapsible">
+        <div class="content-inner">
+          <div class="service-title">Eligibility</div>
+          <ul style="padding-left:18px">
+            <li>Members who have worked in international/regional organisations or outstanding employees for a minimum of five (5) years.</li>
+            <li>Members of civil associations and institutions of public interest with at least five (5) years service.</li>
+            <li>Individuals who received an appreciation award from a local, regional or international organisation specialised in humanitarian work.</li>
+            <li>Volunteers with at least five (5) years of service or at least 500 hours.</li>
+            <li>Funders of humanitarian work: support value at least AED 2,000,000 or as agreed between authority & ministry.</li>
+          </ul>
+
+          <div class="service-title">Required documents</div>
+          <ul style="padding-left:18px">
+            <li>Proof of service / membership letters / awards</li>
+            <li>For funders: bank letters or proof of donation funding ≥ AED 2,000,000</li>
+            <li>Any ministry or authority required certifications</li>
+          </ul>
+
+          <div class="service-title">Processing steps</div>
+          <ol style="padding-left:18px">
+            <li>Collect membership / award / service documents and proof of funding where applicable.</li>
+            <li>Submit nomination and supporting evidence to the relevant authority.</li>
+            <li>Proceed with Emirates ID typing and residency issuance on approval.</li>
+          </ol>
+
+          <div class="service-title">Service duration</div>
+          <p>Typically <strong>1–2 weeks</strong> (depends on authority review and ministerial nomination where applicable).</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CSR Guidance & Script (shared) -->
+    <div class="card">
+      <h3>CSR Guidance & Scripts</h3>
+
+      <button class="collapsible">Step-by-step CSR Workflow (shared)</button>
+      <div class="content-collapsible">
+        <div class="content-inner">
+          <ol style="padding-left:18px">
+            <li>Greet the customer and ask: “How can I help you today?”</li>
+            <li>Identify which Golden Visa category the customer is enquiring about.</li>
+            <li>Ask if nomination (ADRO / nominating authority) is already submitted — check ADRO/hub before proceeding.</li>
+            <li>Confirm all required documents (the lists above) are present and properly attested.</li>
+            <li>Check payment status and application visibility in the Hub; if not visible, check EMERGE / ICP references.</li>
+            <li>If any document is missing, request it and explain auto-cancellation rules (where applicable), e.g. frontline workers rules.</li>
+            <li>Submit through EMERGE / ADRO as per category routing and keep the customer updated with reference numbers.</li>
+            <li>Log the call in the CSR sheet and escalate unresolved or complex cases to operations.</li>
+          </ol>
+        </div>
+      </div>
+
+      <button class="collapsible">CSR Script (shared)</button>
+      <div class="content-collapsible">
+        <div class="content-inner">
+<pre style="white-space:pre-wrap">
+“Thank you for calling Aamer, this is [Your Name]. How may I assist you today?
+
+If this is about the Golden Visa, may I first confirm which category you are enquiring about? (Investor / Real Estate / Entrepreneur / Talent / Graduate / Family / Frontline / Humanitarian)
+
+• I will check your eligibility and the exact documents required for that category.
+• If nomination is required, I will confirm whether ADRO or another authority has already nominated you.
+• If all documents are ready, I will submit the application via EMERGE and provide you with reference numbers.
+• Processing time depends on the category — typically 1–14 working days. I will track and update you.
+
+Do you have your nomination or the required documents ready?”
+</pre>
+        </div>
+      </div>
+
+      <div class="note">
+        <strong>Trainer note:</strong> Teach new agents to always confirm the category and nomination status first (ADRO vs EMERGE vs Hub). If unsure, escalate — do not promise times that you can't confirm.
+      </div>
+    </div>
+
+    <!-- Quick admin links -->
+    <div class="card">
+      <h3>Quick Tools & Links</h3>
+      <div class="links-grid">
+        <a class="link-btn" href="https://aamer.extensyaidesk.com/" target="_blank">📚 iDesk</a>
+        <a class="link-btn" href="https://aamerbackoffice.azurewebsites.net" target="_blank">📕 Aamer Hub</a>
+        <a class="link-btn" href="https://smartservices.icp.gov.ae" target="_blank">🗂 ICP Portal</a>
+      </div>
+    </div>
+
+  </main>
+
+<script>
+/* Collapsible: robust max-height approach (as Residency) */
+document.addEventListener('DOMContentLoaded', () => {
+  const collapsibles = document.querySelectorAll('.collapsible');
+  const panels = document.querySelectorAll('.content-collapsible');
+
+  panels.forEach(p => p.style.maxHeight = '0px');
+
+  collapsibles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panel = btn.nextElementSibling;
+      const isOpen = btn.classList.contains('active');
+
+      if (!isOpen) {
+        btn.classList.add('active');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      } else {
+        btn.classList.remove('active');
+        panel.style.maxHeight = '0px';
+      }
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    document.querySelectorAll('.collapsible.active').forEach(activeBtn => {
+      const panel = activeBtn.nextElementSibling;
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+    });
+  });
+});
+</script>
+
+</body>
+</html>

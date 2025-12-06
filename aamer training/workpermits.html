@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work Permits & HR - Aamer CSR Portal</title>
+
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<style>
+/* --- Reset & Basic --- */
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:'DM Sans',sans-serif; background-color:#f0f0f0; color:#333; display:flex; min-height:100vh; }
+
+/* --- Sidebar --- */
+.sidebar {
+  width:260px; background: linear-gradient(180deg,#0a0146 0%,#1f3f7c 50%,#2e86c1 100%); 
+  color:#fff; flex-shrink:0; display:flex; flex-direction:column;
+  padding:22px; position:fixed; height:100%; overflow-y:auto;
+  border-right:1px solid rgba(255,255,255,0.15);
+}
+.sidebar h2 { font-family:'Libre Baskerville',serif; font-size:1.7rem; margin-bottom:28px; color:#fff; }
+.sidebar a { color:#fff; text-decoration:none; margin:6px 0; display:flex; align-items:center;
+  padding:12px 14px; border-radius:8px; transition:0.25s; font-size:1rem; font-weight:500; }
+.sidebar a i { margin-right:10px; font-size:1.1rem; opacity:0.9; }
+.sidebar a:hover { background:rgba(41, 128, 185, 0.2); }
+.sidebar a.active { background:rgba(41, 128, 185, 0.35); font-weight:550; }
+
+/* --- Content --- */
+.content {margin-left:300px; flex:1; padding:34px 48px; overflow-y:auto;}
+h1,h2,h3 { font-family:'Libre Baskerville',serif; color:#0a0146; margin-bottom:12px; }
+p,li { font-size:1rem; line-height:1.6; color:#24303a; margin-bottom:8px; }
+
+/* --- Card --- */
+.card { background:#fff; border-radius:12px; padding:20px; margin-bottom:22px; box-shadow:0 6px 18px rgba(10,6,70,0.05); }
+.card h3 { margin-bottom:10px; }
+
+/* --- Collapsible Sections --- */
+.collapsible {
+  background:#1e3e7b; color:#fff; cursor:pointer; padding:15px 20px; width:100%; 
+  border:none; border-radius:10px; text-align:left; font-size:1rem; margin-bottom:10px; 
+  display:flex; justify-content:space-between; align-items:center; transition:background-color 0.3s ease; font-weight:500;
+}
+.collapsible:hover { background:#2E86C1; }
+.collapsible:after { content:'\25BC'; font-size:1rem; transition:transform 0.35s ease; }
+.collapsible.active:after { transform:rotate(180deg); }
+
+.content-collapsible {
+  max-height:0; overflow:hidden; transition:max-height 0.45s ease, padding 0.35s ease; 
+  padding:0 20px; background:#FDFEFE; border-left:4px solid #1e3e7b;
+  border-radius:6px; margin-bottom:15px; display:block; color:#333;
+}
+.content-inner{padding:14px 0}
+.service-title{font-weight:700;color:#0a0146;margin-bottom:6px}
+
+/* --- Badge --- */
+.badge{display:inline-block;background:#eef6ff;color:#1a3f7c;padding:6px 10px;border-radius:999px;font-weight:600;font-size:.95rem;margin-right:8px}
+
+/* --- Notes --- */
+.note{background:#fff7e6;border:1px solid #fde3a8;padding:12px;border-radius:8px;margin-top:10px}
+
+/* --- Links grid --- */
+.links-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:12px}
+.link-btn{display:flex;align-items:center;justify-content:center;gap:6px;padding:10px;border-radius:8px;background-color:#1e3e7b;color:#fff;text-decoration:none;font-weight:500}
+.link-btn:hover { transform:translateY(-3px); box-shadow:0 6px 14px rgba(0,0,0,0.28); background:#2E86C1; }
+
+/* --- Responsive --- */
+@media(max-width:900px){
+  .content{margin-left:14px;padding:20px}
+  .sidebar{position:relative;width:100%;height:auto;margin-bottom:10px}
+}
+</style>
+</head>
+<body>
+<div class="sidebar">
+  <h2>Aamer CSR Portal</h2>
+  <a href="index.html"><i class="fas fa-home"></i>Dashboard</a>
+  <a href="eid.html"><i class="fas fa-id-card"></i>EID Applications</a>
+  <a href="residency.html"><i class="fas fa-passport"></i>Residency Services</a>
+  <a href="goldenvisa.html"><i class="fas fa-crown"></i>Golden Visa</a>
+  <a href="workpermits.html" class="active"><i class="fas fa-briefcase"></i>Work Permits & HR</a>
+  <a href="domestic.html"><i class="fas fa-user-friends"></i>Domestic Workers</a>
+  <a href="judicial.html"><i class="fas fa-gavel"></i>Judicial & Legal</a>
+  <a href="attestations.html"><i class="fas fa-file-signature"></i>Attestation & Translation</a>
+  <a href="commercial.html"><i class="fas fa-building"></i>Commercial Licenses</a>
+  <a href="delivery.html"><i class="fas fa-truck"></i>Delivery Services</a>
+  <a href="visa.html"><i class="fas fa-plane"></i>International & Tourism Visa</a>
+  
+</div>
+
+<main class="content" role="main">
+<h1>Work Permits & HR Services</h1>
+<div class="card">
+  <h3>Description</h3>
+  <p>Manage new work permits, company file creation, job offer guidance, and corporate customer services.</p>
+  <p><strong>Fees:</strong> Vary depending on permit and company requirements. Check app for exact values.</p>
+</div>
+
+<div class="card">
+<h3>Work Permits & HR Services -Full Details </h3>
+
+<!-- Company File -->
+<button class="collapsible">Company File</button>
+<div class="content-collapsible">
+  <div class="content-inner">
+    <div class="service-title">Service Card</div>
+    <ul>
+      <li>A service to help the client open a company profile to complete labor procedures</li>
+      <li>Terms and conditions may apply</li>
+    </ul>
+    <div class="service-title">Service Duration</div>
+    <p>1–2 working days after receiving the documents</p>
+    <div class="service-title">Service Fees</div>
+    <p>105 AED (incl. 5% VAT)</p>
+  </div>
+</div>
+
+<!-- Job Offer (First Visit) -->
+<button class="collapsible">Job Offer (First Visit)</button>
+<div class="content-collapsible">
+  <div class="content-inner">
+    <div class="service-title">Service Card</div>
+    <ul>
+      <li>Work permit, job offer, and work contract according to approved work patterns</li>
+      <li>Degree certificate must have UAE Ministry of Foreign Affairs attestation</li>
+      <li>Country ID required for Iranian, Pakistani, Afghani, Iraqi nationals</li>
+      <li>MOHRE work offer sent to applicant for signature</li>
+      <li>Fees not refunded if rejected</li>
+      <li>Terms and conditions may apply</li>
+    </ul>
+    <div class="service-title">Service Duration</div>
+    <p>1–2 working days</p>
+    <div class="service-title">Service Fees</div>
+    <p>278.77 AED (incl. 5% VAT)</p>
+  </div>
+</div>
+
+<!-- Work Permit Fees -->
+<button class="collapsible">Work Permit Fees</button>
+<div class="content-collapsible">
+  <div class="content-inner">
+    <div class="service-title">Category 1</div>
+    <p>Fees: 838 AED (incl. 5% VAT)</p>
+    <div class="service-title">Category 2</div>
+    <p>Fees: 1,788 AED (incl. 5% VAT)</p>
+    <div class="service-title">Category 3 (No longer exist)</div>
+    <p>Fees: 4,038 AED (incl. 5% VAT)</p>
+  </div>
+</div>
+
+<!-- New Work Visa -->
+<button class="collapsible">New Work Visa</button>
+<div class="content-collapsible">
+  <div class="content-inner">
+    <div class="service-title">New Work Visa Unskilled</div>
+    <p>Fees: 4,412.62 AED (incl. 5% VAT). Note: card payment includes electronic fee</p>
+    <div class="service-title">New Work Visa Skilled</div>
+    <p>Fees: 4,350 AED (incl. 5% VAT). Note: card payment includes electronic fee</p>
+    <div class="service-title">PRO First Visit</div>
+    <p>Fees: 1,563.47 AED (incl. 5% VAT)</p>
+  </div>
+</div>
+
+<!-- Corporate Customer -->
+<button class="collapsible">Corporate Customer — Employment Visa (Labour Category)</button>
+<div class="content-collapsible">
+  <div class="content-inner">
+    <p>In the app, only “reference name” is requested for HR processing.</p>
+  </div>
+</div>
+<!-- Advertiser Permit -->
+<button class="collapsible">Advertiser Permit</button>
+<div class="content-collapsible">
+  <div class="content-inner">
+    <div class="service-title">What is it?</div>
+    <p>The Advertiser Permit is an official authorization issued by the UAE Media Council for individuals or entities engaging in promotional or advertising activity on social media platforms, paid or unpaid.</p>
+
+    <div class="service-title">Why was it launched?</div>
+    <ul>
+      <li>To regulate social-media advertising activities in the UAE, ensuring transparent and credible content.</li>
+      <li>To protect consumers from misleading ads or unlicensed promotional content.</li>
+    </ul>
+
+    <div class="service-title">Scope</div>
+    <ul>
+      <li>Covers any social-media account through which promotional content is published on behalf of a third party, whether paid, gifted, or barter.</li>
+      <li>Usually exempt when the creator only promotes their own products/services and no third-party paid promotion is involved.</li>
+    </ul>
+
+    <div class="service-title">Requirements & Process</div>
+    <ul>
+      <li>Applicant must be a UAE resident or have valid residence visa.</li>
+      <li>Must obtain a business/trade license or freelancer permit first.</li>
+      <li>Then apply for the Advertiser Permit via the UAE Media Council portal.</li>
+      <li>In Abu Dhabi, a local business license via ADDED may be required for influencer/advertiser operations.</li>
+    </ul>
+
+    <div class="service-title">Costs & Fees</div>
+    <ul>
+      <li>Advertiser Permit: Free for the first three years for citizens/residents in many cases.</li>
+      <li>Business/trade license (foundation): Typical cost AED 5,000–15,000+ per year in UAE.</li>
+    </ul>
+
+    <div class="service-title">Validity & Renewal</div>
+    <ul>
+      <li>Usually valid for 1 year, renewable.</li>
+      <li>Grace-period extension announced: deadline extended to January 31, 2026.</li>
+    </ul>
+
+    <div class="service-title">Non-Compliance Penalties</div>
+    <ul>
+      <li>Fines for serious breaches can reach AED 1 million.</li>
+      <li>Local fines in Abu Dhabi up to AED 10,000 for unlicensed activity.</li>
+    </ul>
+
+    <div class="service-title">Practical Tips</div>
+    <ul>
+      <li>Before partnering with a brand, ensure you hold the permit and display your permit number on your social profile.</li>
+      <li>Keep campaign documents (contracts, invoices, gifts) in case of audit.</li>
+      <li>If operating in Abu Dhabi, check whether you need the local ADDED license as well as the federal media permit.</li>
+    </ul>
+
+    <div class="service-title">Summary</div>
+    <p>The licensing regime for influencers and social-media advertising in the UAE (notably Abu Dhabi) is mandatory. You need both a business/freelance license and the Advertiser Permit. Operating without it risks substantial fines and enforcement action.</p>
+  </div>
+</div>
+
+
+</div>
+
+<!-- CSR Scripts & Guidance -->
+<div class="card">
+  <h3>CSR Guidance & Scripts</h3>
+
+  <!-- Step-by-Step CSR Guidance -->
+  <button class="collapsible">Step-by-Step CSR Guidance</button>
+  <div class="content-collapsible">
+    <div class="content-inner">
+      <ol style="padding-left:18px">
+        <li>Greet the client warmly and confirm their request type (Work Permit / HR Service).</li>
+        <li>Ask for Job ID / Application ID, and verify company name and nationality of the worker.</li>
+        <li>Check which category/service is required (Company File, Job Offer, Work Permit Category, New Work Visa, or Corporate Customer).</li>
+        <li>Ensure all required documents are ready (degree certificate attested, ID cards, salary/work details, etc.).</li>
+        <li>Guide the client to submit the request via the Aamer app and explain the expected processing time for their selected service.</li>
+        <li>Inform the client about service fees and any special conditions (e.g., fees not refundable on rejection, extra fees for card payments).</li>
+        <li>Confirm the client’s contact information for follow-up and remind them to check the app for updates.</li>
+        <li>End the call politely, offering any additional assistance or guidance if needed.</li>
+      </ol>
+
+      <div class="note">
+        <strong>Note for CSRs:</strong> Always verify nationality and document completeness before directing the client to submit the request. Mention special requirements for PRO First Visit or skilled/unskilled visas if applicable.
+      </div>
+    </div>
+  </div>
+
+  <!-- CSR Script -->
+  <button class="collapsible">CSR Script</button>
+  <div class="content-collapsible">
+    <div class="content-inner">
+      <pre>
+“Hello [Client Name], thank you for contacting Aamer CSR. To proceed with your request for [Work Permit / HR Service], please ensure you have your Job ID / Application ID ready. 
+
+Make sure all required documents, including attested degree certificates and ID cards, are available. 
+
+You can submit your request directly through the Aamer app. Once submitted, our HR team will review it and contact you with next steps. 
+
+Please note the service fees: [mention exact fee based on service], and that fees are not refundable if the request is rejected. 
+
+If you have any questions or need further guidance, feel free to reach out. Thank you for choosing Aamer.”
+      </pre>
+    </div>
+  </div>
+</div>
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const collapsibles = document.querySelectorAll('.collapsible');
+  const panels = document.querySelectorAll('.content-collapsible');
+  panels.forEach(p => { p.style.maxHeight = '0px'; });
+  collapsibles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panel = btn.nextElementSibling;
+      const isOpen = btn.classList.contains('active');
+      if (!isOpen) {
+        btn.classList.add('active');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      } else {
+        btn.classList.remove('active');
+        panel.style.maxHeight = '0px';
+      }
+    });
+  });
+  window.addEventListener('resize', () => {
+    document.querySelectorAll('.collapsible.active').forEach(activeBtn => {
+      const panel = activeBtn.nextElementSibling;
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+    });
+  });
+});
+</script>
+</body>
+</html>
