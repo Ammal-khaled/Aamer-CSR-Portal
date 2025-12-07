@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Municipalities & Transport - Aamer CSR Portal</title>
+
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<style>
+/* --- Reset & Basic --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family:'DM Sans',sans-serif; background-color: #f0f0f0; color:#333; display:flex; min-height:100vh; }
+
+/* --- Sidebar --- */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg,#0a0146 0%,#1f3f7c 50%,#2e86c1 100%);
+  color:#fff; flex-shrink:0; display:flex; flex-direction:column;
+  padding:22px; position:fixed; height:100%; overflow-y:auto;
+  border-right:1px solid rgba(255,255,255,0.15);
+}
+.sidebar h2 { font-family:'Libre Baskerville',serif; font-size:1.7rem; margin-bottom:28px; color:#fff; }
+.sidebar a { color:#fff; text-decoration:none; margin:6px 0; display:flex; align-items:center;
+  padding:12px 14px; border-radius:8px; transition:0.25s; font-size:1rem; font-weight:500; }
+.sidebar a i { margin-right:10px; font-size:1.1rem; opacity:0.9; }
+.sidebar a:hover { background:rgba(41, 128, 185, 0.2); }
+.sidebar a.active { background:rgba(41, 128, 185, 0.35); font-weight:550; }
+
+/* Content */
+.content { margin-left:300px; flex:1; padding:34px 48px; overflow-y:auto; }
+h1,h2,h3{ font-family:'Libre Baskerville',serif; color:#0a0146; margin-bottom:12px; }
+p,li{ font-size:1rem; line-height:1.6; color:#24303a; margin-bottom:8px; }
+
+/* Card */
+.card {
+  background:#fff; border-radius:12px; padding:20px;
+  margin-bottom:22px; box-shadow:0 6px 18px rgba(10,6,70,0.05);
+}
+
+/* Collapsible */
+.collapsible {
+  background:#1e3e7b; color:#fff; cursor:pointer; padding:15px 20px;
+  width:100%; border:none; border-radius:10px;
+  text-align:left; font-size:1rem; margin-bottom:10px;
+  display:flex; justify-content:space-between; align-items:center;
+  transition:background-color 0.3s ease; font-weight:500;
+}
+.collapsible:hover { background:#2E86C1; }
+.collapsible:after { content:'\25BC'; font-size:1rem; transition:transform 0.35s ease; }
+.collapsible.active:after { transform:rotate(180deg); }
+
+.content-collapsible {
+  max-height:0; overflow:hidden; transition:max-height 0.45s ease, padding 0.35s ease;
+  padding:0 20px; background:#FDFEFE; border-left:4px solid #1e3e7b;
+  border-radius:6px; margin-bottom:15px; display:block; color:#333;
+}
+.content-inner{ padding:14px 0; }
+.service-title{ font-weight:700; color:#0a0146; margin-bottom:6px; }
+
+/* Small note box */
+.note { background:#fff7e6; border:1px solid #fde3a8; padding:12px; border-radius:8px; margin-top:10px; }
+
+/* Responsive */
+@media(max-width:768px){
+  body{flex-direction:column;}
+  .sidebar{width:100%; flex-direction:row; overflow-x:auto; height:auto; padding:10px;}
+  .sidebar a{margin:0 12px; white-space:nowrap;}
+  .content{margin-left:0; padding:22px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <h2>Aamer CSR Portal</h2>
+  <a href="index.html"><i class="fas fa-home"></i>Dashboard</a>
+  <a href="eid.html"><i class="fas fa-id-card"></i>EID Applications</a>
+  <a href="residency.html"><i class="fas fa-passport"></i>Residency Services</a>
+  <a href="goldenvisa.html"><i class="fas fa-crown"></i>Golden Visa</a>
+  <a href="workpermits.html"><i class="fas fa-briefcase"></i>Work Permits & HR</a>
+  <a href="domestic.html"><i class="fas fa-user-friends"></i>Domestic Workers</a>
+  <a href="judicial.html"><i class="fas fa-gavel"></i>Judicial & Legal</a>
+  <a href="attestations.html"><i class="fas fa-file-signature"></i>Attestation & Translation</a>
+  <a href="commercial.html"><i class="fas fa-building"></i>Commercial Licenses</a>
+   <a href="municipalities.html" class="active"><i class="fas fa-city"></i>Municipalities & Transport</a>
+  <a href="delivery.html"><i class="fas fa-truck"></i>Delivery Services</a>
+  <a href="visa.html"><i class="fas fa-plane "></i>International & Tourism Visa</a>
+</div>
+
+<!-- Content -->
+<main class="content" role="main">
+
+<h1>Municipalities & Transport</h1>
+
+<!-- Overview -->
+<div class="card">
+  <h3>Overview</h3>
+  <p>This section covers the Municipalities & Transport services that Aamer provides support for — including <strong>Thawtheeq (Tenancy Contracts)</strong> and <strong>Unit Valuation Certificates</strong>. These services are part of the official municipality systems used across the UAE.</p>
+
+  <div class="note">
+    <strong>Quick note:</strong> In Thawtheeq, the lessor can issue the contract directly in the system. If the tenant initiates the request, the lessor must approve it inside the system before issuance.
+  </div>
+</div>
+<!-- Search Bar under Overview -->
+<div class="card">
+  <h3>Search Municipalities & Transport Categories</h3>
+  <input type="text" id="category-search" placeholder="Type to search..." style="width:100%;padding:8px;border-radius:6px;border:1px solid #ccc;margin-top:6px;">
+</div>
+
+<!-- Thawtheeq -->
+<div class="card">
+  <h3>Thawtheeq (Tenancy Contract)</h3>
+
+  <button class="collapsible">Service Card — Thawtheeq (Tenancy Contract)</button>
+  <div class="content-collapsible">
+    <div class="content-inner">
+
+      <p class="service-title">Service Description</p>
+      <p>Thawtheeq registers tenancy contracts in the municipality system. Lessor can issue directly; tenant requests require lessor approval in the system.</p>
+
+      <p class="service-title">Service Policies</p>
+      <ul style="padding-left:18px">
+        <li>Lessor approval is mandatory for tenant requests.</li>
+        <li>Documents must be valid and clear.</li>
+        <li>Commercial-use properties may require additional approvals.</li>
+      </ul>
+
+      <p class="service-title">Service Duration</p>
+      <p><strong>1 business day</strong> after receiving documents and payment.</p>
+
+      <p class="service-title">Service Fees</p>
+      <p><strong>105 AED (incl. 5% VAT)</strong></p>
+
+      <p class="service-title">Required Documents</p>
+      <ul style="padding-left:18px">
+        <li>Passport & Emirates ID copies.</li>
+        <li>Signed tenancy contract.</li>
+        <li>Ownership proof (title deed).</li>
+      </ul>
+
+    </div>
+  </div>
+
+<!-- Unit Valuation -->
+  <h3>Unit Valuation Certificate</h3>
+
+  <button class="collapsible">Service Card — Unit Valuation Certificate</button>
+  <div class="content-collapsible">
+    <div class="content-inner">
+
+      <p class="service-title">Service Description</p>
+      <p>The valuation certificate provides the official value of a property unit, often used for Golden Visa, mortgage assessments, and transfer purposes.</p>
+
+      <p class="service-title">Service Policies</p>
+      <ul style="padding-left:18px">
+        <li>Ownership documents must be valid.</li>
+        <li>Off-plan units require developer confirmation.</li>
+        <li>Mortgage or disputes may delay issuance.</li>
+      </ul>
+
+      <p class="service-title">Service Duration</p>
+      <p><strong>1–2 business days</strong></p>
+
+      <p class="service-title">Service Fees</p>
+      <p><strong>1,500 AED (incl. 5% VAT)</strong></p>
+
+      <p class="service-title">Required Documents</p>
+      <ul style="padding-left:18px">
+        <li>Title deed or ownership proof.</li>
+        <li>Passport & Emirates ID.</li>
+        <li>Sales agreement or developer letter (for off-plan).</li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+<!-- CSR GUIDANCE (separate card as you asked) -->
+<div class="card">
+  <h3>CSR Guidance & Scripts</h3>
+
+  <!-- Workflow -->
+  <button class="collapsible">Step-by-Step CSR Workflow</button>
+  <div class="content-collapsible">
+    <div class="content-inner">
+      <ol style="padding-left:18px">
+        <li>Confirm the service type (Thawtheeq / Valuation).</li>
+        <li>Verify and collect required documents.</li>
+        <li>Confirm payment and record receipt.</li>
+        <li>Submit through Aamer Hub.</li>
+        <li>If lessor approval required → follow up.</li>
+        <li>Track municipality updates.</li>
+        <li>Send the customer final copy / certificate.</li>
+        <li>Close ticket with proper notes.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <button class="collapsible">CSR Script</button>
+  <div class="content-collapsible">
+    <div class="content-inner">
+<pre style="white-space:pre-wrap">
+“Thank you for contacting Aamer. My name is [Name].  
+I will help you with your request.
+
+To begin, may I confirm the required service  
+(Thawtheeq or Unit Valuation Certificate)?
+
+I will need the required documents and will guide you step-by-step.  
+Once payment is completed, we will submit your request and update you.”
+</pre>
+    </div>
+  </div>
+
+  <!-- Red flags -->
+  <button class="collapsible">Red Flags / Common Mistakes</button>
+  <div class="content-collapsible">
+    <div class="content-inner">
+      <ul style="padding-left:18px">
+        <li>Tenant-initiated Thawtheeq without landlord approval.</li>
+        <li>Mismatching ownership documents.</li>
+        <li>Unreadable PDF or blurry images.</li>
+        <li>Off-plan property missing developer confirmation.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Notes -->
+  <button class="collapsible">Additional Notes</button>
+  <div class="content-collapsible">
+    <div class="content-inner">
+      <ul style="padding-left:18px">
+        <li>Always confirm document clarity before submission.</li>
+        <li>Track municipality reference numbers carefully.</li>
+        <li>Use Aamer Hub notes for all customer interactions.</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<!-- Quick Tools & Notes -->
+<div class="card">
+  <h3>Quick Tools & Notes</h3>
+  <ul style="padding-left:18px">
+    <li>Verify mortgage or judicial cases before valuation.</li>
+    <li>Track lessor approvals for tenant Thawtheeq requests.</li>
+    <li>Keep SLAs clear: 1 day Thawtheeq, 1–2 days valuation.</li>
+    <li>Always record payment confirmation.</li>
+  </ul>
+</div>
+
+</main>
+
+<!-- Collapsible Script -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const collapsibles = document.querySelectorAll('.collapsible');
+  collapsibles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      btn.classList.toggle('active');
+      if (content.style.maxHeight) content.style.maxHeight = null;
+      else content.style.maxHeight = content.scrollHeight + "px";
+    });
+  });
+});
+const searchInput = document.getElementById('category-search');
+  const collapsibles = document.querySelectorAll('.collapsible');
+
+  searchInput.addEventListener('input', function() {
+    const filter = searchInput.value.toLowerCase();
+    collapsibles.forEach(btn => {
+      const text = btn.textContent.toLowerCase();
+      if (text.includes(filter)) {
+        btn.style.display = '';
+        btn.nextElementSibling.style.display = ''; // show content container too
+      } else {
+        btn.style.display = 'none';
+        btn.nextElementSibling.style.display = 'none';
+      }
+    });
+  });
+
+</script>
+
+</body>
+</html>

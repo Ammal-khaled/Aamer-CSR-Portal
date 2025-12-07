@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commercial Licenses - Aamer CSR Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<style>
+/* --- Reset & Basic --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family:'DM Sans',sans-serif; background-color: #f0f0f0; color:#333; display:flex; min-height:100vh; }
+
+/* --- Sidebar --- */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg,#0a0146 0%,#1f3f7c 50%,#2e86c1 100%);
+  color:#fff; flex-shrink:0; display:flex; flex-direction:column;
+  padding:22px; position:fixed; height:100%; overflow-y:auto;
+  border-right:1px solid rgba(255,255,255,0.15);
+}
+.sidebar h2 { font-family:'Libre Baskerville',serif; font-size:1.7rem; margin-bottom:28px; color:#fff; }
+.sidebar a { color:#fff; text-decoration:none; margin:6px 0; display:flex; align-items:center;
+  padding:12px 14px; border-radius:8px; transition:0.25s; font-size:1rem; font-weight:500; }
+.sidebar a i { margin-right:10px; font-size:1.1rem; opacity:0.9; }
+.sidebar a:hover { background:rgba(41, 128, 185, 0.2); }
+.sidebar a.active { background:rgba(41, 128, 185, 0.35); font-weight:550; }
+
+/* Content */
+.content {margin-left:300px; flex:1; padding:34px 48px; overflow-y:auto;}
+h1,h2,h3 { font-family:'Libre Baskerville',serif; color:#0a0146; margin-bottom:12px; }
+p,li { font-size:1rem; line-height:1.6; color:#24303a; margin-bottom:8px; }
+.card { background:#fff; border-radius:12px; padding:20px; margin-bottom:22px; box-shadow:0 6px 18px rgba(10,6,70,0.05); }
+.card h3 { margin-bottom:10px; }
+
+.collapsible { background:#1e3e7b; color:#fff; cursor:pointer; padding:15px 20px; width:100%; border:none; border-radius:10px; text-align:left; font-size:1rem; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center; transition:background-color 0.3s ease; font-weight:500; }
+.collapsible:hover { background:#2E86C1; }
+.collapsible:after { content:'\25BC'; font-size:1rem; transition:transform 0.35s ease; }
+.collapsible.active:after { transform:rotate(180deg); }
+.content-collapsible { max-height:0; overflow:hidden; transition:max-height 0.45s ease, padding 0.35s ease; padding:0 20px; background:#FDFEFE; border-left:4px solid #1e3e7b; border-radius:6px; margin-bottom:15px; display:block; color:#333; }
+.content-inner{padding:14px 0}
+
+.service-title{font-weight:700;color:#0a0146;margin-bottom:6px}
+.note{background:#fff7e6;border:1px solid #fde3a8;padding:12px;border-radius:8px;margin-top:10px}
+
+/* Responsive */
+@media(max-width:768px){
+  body{flex-direction:column;}
+  .sidebar{width:100%; flex-direction:row; overflow-x:auto; height:auto; padding:10px;}
+  .sidebar a{margin:0 12px; white-space:nowrap;}
+  .content{margin-left:0; padding:22px;}
+}
+</style>
+</head>
+<body>
+<div class="sidebar">
+  <h2>Aamer CSR Portal</h2>
+  <a href="index.html"><i class="fas fa-home"></i>Dashboard</a>
+  <a href="eid.html"><i class="fas fa-id-card"></i>EID Applications</a>
+  <a href="residency.html"><i class="fas fa-passport"></i>Residency Services</a>
+  <a href="goldenvisa.html"><i class="fas fa-crown"></i>Golden Visa</a>
+  <a href="workpermits.html"><i class="fas fa-briefcase"></i>Work Permits & HR</a>
+  <a href="domestic.html"><i class="fas fa-user-friends"></i>Domestic Workers</a>
+  <a href="judicial.html"><i class="fas fa-gavel"></i>Judicial & Legal</a>
+  <a href="attestations.html"><i class="fas fa-file-signature"></i>Attestation & Translation</a>
+  <a href="commercial.html" class="active"><i class="fas fa-building"></i>Commercial Licenses</a>
+  <a href="municipalities.html"><i class="fas fa-city"></i>Municipalities & Transport</a>
+  <a href="delivery.html"><i class="fas fa-truck"></i>Delivery Services</a>
+  <a href="visa.html"><i class="fas fa-plane"></i>International & Tourism Visa</a>
+</div>
+<div class="content">
+    <h1><i class="fas fa-building"></i>Commercial Licenses</h1>
+  <div class="card">
+    <h3>Overview</h3> 
+    <p><strong>Description:</strong> Freelance, LLC, Trader licenses, trade name reservation, economic license issuance/renewal.</p>
+    <p><strong>Fees:</strong> Varies depending on license type. Check app.</p>
+
+      <div class="note">
+        <strong>Reminder:</strong> Most commercial license services are completed within 
+        <strong>1–2 working days</strong> after receiving the required documents.  
+        New economic licenses may extend to <strong>1–2 weeks</strong>.  
+        Payment links are usually sent directly to the customer's registered contact and must be 
+        completed within the given timeframe (often <strong>within 2 working days</strong>).
+      </div>
+      </div>
+
+  <!-- Search Bar -->
+  <div class="card">
+    <h3>Search Commercial License Categories</h3>
+    <input type="text" id="category-search" placeholder="Type to search..." style="width:100%;padding:8px;border-radius:6px;border:1px solid #ccc;margin-top:6px;">
+  </div>
+
+  <div class="card">
+    <h3>Commercial Licenses-Full Details</h3>
+
+   <!-- Freelance License – Abu Dhabi -->
+<button class="collapsible">Freelance License – Abu Dhabi</button>
+<div class="content-collapsible">
+  <div class="content-inner">
+
+    <div class="service-title">What is a Freelance License?</div>
+    <p>
+      A Freelance License in Abu Dhabi allows an individual to work independently without a company or sponsor. 
+      It enables the license holder to provide professional services to companies or individuals and legally issue contracts in their own name.
+    </p>
+
+    <div class="service-title">Licensing Authority</div>
+    <p>
+      The TAMM platform under Abu Dhabi Department of Economic Development issues the Freelancer Permit. 
+      This permit allows individuals to apply for a self-sponsored residence visa.
+    </p>
+
+    <div class="service-title">Permitted Professions</div>
+    <p>
+      Design, digital marketing, translation, training, consulting, photography, programming, editing, media production, journalism, and other professions listed by the licensing authority.
+    </p>
+
+    <div class="service-title">Required Documents</div>
+    <ul>
+      <li>Valid passport.</li>
+      <li>Recent passport-sized photo.</li>
+      <li>CV / Resume.</li>
+      <li>Educational or professional certificates (if any).</li>
+      <li>Tenancy contract or proof of residence in Abu Dhabi.</li>
+      <li>Completed Freelancer Permit application on TAMM.</li>
+    </ul>
+
+    <div class="service-title">Costs</div>
+    <p>
+      Freelancer Permit: approximately AED 1,200 – 1,500 per year.<br>
+      Residence visa issuance: approximately AED 3,000 – 5,000 (depending on insurance and medical test requirements).
+    </p>
+
+    <div class="service-title">Residence Visa</div>
+    <p>
+      A self-sponsored residence visa can be issued after obtaining the Freelancer Permit. Requirements include:
+    </p>
+    <ul>
+      <li>Valid passport.</li>
+      <li>Health insurance.</li>
+      <li>Tenancy contract or proof of residence.</li>
+      <li>Medical fitness certificate.</li>
+    </ul>
+    <p>Duration: 1 or 2 years, renewable.</p>
+
+    <div class="service-title">Family Sponsorship</div>
+    <p>
+      Family sponsorship is allowed for spouse and children if all the following conditions are met:
+    </p>
+    <ul>
+      <li>Minimum monthly income of AED 4,000 (or AED 3,000 if accommodation is provided).</li>
+      <li>Residence valid for at least 6 months.</li>
+      <li>Tenancy contract or proof of residence.</li>
+      <li>Health insurance for the sponsor and dependents.</li>
+    </ul>
+
+    <div class="service-title">Benefits</div>
+    <ul>
+      <li>Work independently without a company or sponsor.</li>
+      <li>Ability to legally contract and open a bank account in your own name.</li>
+      <li>Possibility to obtain a residence visa and sponsor family members.</li>
+      <li>Flexibility to provide services to multiple companies or clients.</li>
+    </ul>
+
+  </div>
+</div>
+
+
+    <!-- Individual & Company LLC -->
+    <button class="collapsible">Individual & Company LLC License</button>
+    <div class="content-collapsible">
+      <div class="content-inner">
+        <div class="service-title">Ownership</div>
+        <p>Individual LLC: Single owner, limited liability.<br>
+           Company LLC: 2–50 partners, limited liability.</p>
+        <div class="service-title">Place of Activity</div>
+        <p>Individual LLC: Physical or virtual office depending on activity.<br>
+           Company LLC: Physical office required.</p>
+        <div class="service-title">Permitted Activities</div>
+        <p>Individual LLC: Most commercial and service activities.<br>
+           Company LLC: Commercial, industrial, and service activities.</p>
+        <div class="service-title">Visas</div>
+        <p>Individual LLC: Limited visas depending on office space.<br>
+           Company LLC: Multiple visas depending on office space.</p>
+        <div class="service-title">Costs</div>
+        <p>Varies by capital and activity.</p>
+        <div class="service-title">Ease of Expansion</div>
+        <p>Individual LLC: Medium.<br>Company LLC: Easy, can open branches and handle large contracts.</p>
+      </div>
+    </div>
+
+    <!-- Abu Dhabi Trader License (merged with New Economic License) -->
+    <button class="collapsible">Abu Dhabi Trader License</button>
+    <div class="content-collapsible">
+      <div class="content-inner">
+        <div class="service-title">Ownership</div>
+        <p>Single individual, natural person</p>
+        <div class="service-title">Place of Activity</div>
+        <p>Physical office not required for 2 years (MOA optional for approval), can be home-based or e-commerce</p>
+        <div class="service-title">Permitted Activities</div>
+        <p>Up to 6 activities initially; 100 AED per additional activity</p>
+        <div class="service-title">Visas</div>
+        <p>Limited 1–2 visas</p>
+        <div class="service-title">Service Duration</div>
+        <p>1–2 weeks for issuance</p>
+        <div class="service-title">Service Fees</div>
+        <p>1,500 AED (incl. 5% VAT)</p>
+      </div>
+    </div>
+
+    <!-- Reserve Trade Name -->
+    <button class="collapsible">Reserve Trade Name</button>
+    <div class="content-collapsible">
+      <div class="content-inner">
+        <div class="service-title">Service Description</div>
+        <p>Reservation of a trade name before issuing a commercial license. Trade name must comply with UAE rules and match the license activity.</p>
+        <div class="service-title">Required Documents</div>
+        <ul>
+          <li>Applicant’s Emirates ID</li>
+          <li>Proposed trade name list</li>
+        </ul>
+        <div class="service-title">Service Duration</div>
+        <p>1–2 working days</p>
+        <div class="service-title">Service Fees</div>
+        <p>210 AED (incl. 5% VAT)</p>
+      </div>
+    </div>
+
+    <!-- Real Beneficiary -->
+    <button class="collapsible">Real Beneficiary (Registration / Modification)</button>
+    <div class="content-collapsible">
+      <div class="content-inner">
+        <div class="service-title">Service Description</div>
+        <p>The real beneficiary is the natural person who ultimately owns or controls the legal entity directly or indirectly.</p>
+        <div class="service-title">Required Documents</div>
+        <ul>
+          <li>License copy</li>
+          <li>Owner/partners Emirates IDs</li>
+          <li>Real Beneficiary declaration form</li>
+        </ul>
+        <div class="service-title">Service Duration</div>
+        <p>1–2 working days</p>
+        <div class="service-title">Service Fees</div>
+        <p>350 AED (incl. 5% VAT + Beneficiary Chart)</p>
+      </div>
+    </div>
+
+    <!-- Renewal / Issuing Economic License -->
+    <button class="collapsible">Issuing / Renewal of Economic License</button>
+    <div class="content-collapsible">
+      <div class="content-inner">
+        <div class="service-title">Service Duration</div>
+        <p>1–2 weeks for new issuance, 1–2 business days for renewal</p>
+        <div class="service-title">Service Fees</div>
+        <p>New license: 1,500 AED (incl. 5% VAT).<br>
+           Renewal: 210 AED (incl. 5% VAT)</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CSR Resources -->
+  <div class="card">
+    <h2>CSR Resources for Commercial Licenses</h2>
+    <button class="collapsible">Step-by-Step Guidance</button>
+    <div class="content-collapsible">
+      <div class="content-inner">
+        <ol>
+          <li>Confirm the type of commercial license required.</li>
+          <li>Check applicant eligibility, documents, and capital requirements.</li>
+          <li>Explain permitted activities and office requirements.</li>
+          <li>Inform applicant about costs, fees, and visa options.</li>
+          <li>Track application progress and update applicant accordingly.</li>
+          <li>Guide client to submit request through Aamer app.</li>
+        </ol>
+      </div>
+    </div>
+    <button class="collapsible">Notes / Practical Tips</button>
+    <div class="content-collapsible">
+      <div class="content-inner">
+        <ul>
+          <li>Verify documents and residency requirements before submission.</li>
+          <li>Explain differences between Freelancer, Individual LLC, Company LLC, and Trader licenses.</li>
+          <li>Costs and visa allowances vary depending on license type and office.</li>
+          <li>Check permitted activities according to the license.</li>
+          <li>Always track submissions to update the applicant.</li>
+        </ul>
+      </div>
+    </div>
+    <button class="collapsible">Realistic CSR Script</button>
+    <div class="content-collapsible">
+      <div class="content-inner">
+        <pre>
+“Hello [Applicant Name], thank you for contacting Aamer regarding commercial license services.
+May I confirm the type of license you require: Freelance, Individual LLC, Company LLC, or Abu Dhabi Trader?
+
+Please ensure all required documents are ready. Our team will guide you through submission via the Aamer app.
+
+Fees depend on the license type, capital, and office setup. Visa eligibility varies with license type.
+
+Do you have the documents ready, or would you like guidance on submitting them through the app?”
+        </pre>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const collapsibles = document.querySelectorAll('.collapsible');
+    collapsibles.forEach(btn => {
+      btn.addEventListener('click', function() {
+        this.classList.toggle('active');
+        const content = this.nextElementSibling;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+        } else {
+          // close all other panels
+          document.querySelectorAll('.content-collapsible').forEach(c => {
+            if(c !== content) c.style.maxHeight = null;
+          });
+          content.style.maxHeight = content.scrollHeight + 'px';
+          setTimeout(() => content.scrollIntoView({behavior:'smooth', block:'center'}), 220);
+        }
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      document.querySelectorAll('.content-collapsible').forEach(panel => {
+        if(panel.style.maxHeight) panel.style.maxHeight = panel.scrollHeight + 'px';
+      });
+    });
+  });
+  const searchInput = document.getElementById('category-search');
+  const collapsibles = document.querySelectorAll('.collapsible');
+
+  searchInput.addEventListener('input', function() {
+    const filter = searchInput.value.toLowerCase();
+    collapsibles.forEach(btn => {
+      const text = btn.textContent.toLowerCase();
+      if (text.includes(filter)) {
+        btn.style.display = '';
+        btn.nextElementSibling.style.display = ''; // show content container too
+      } else {
+        btn.style.display = 'none';
+        btn.nextElementSibling.style.display = 'none';
+      }
+    });
+  });
+</script>
+</body>
+</html>
