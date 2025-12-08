@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domestic Worker Services - Aamer CSR Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<style>
+/* --- Reset & Basic --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family:'DM Sans',sans-serif;   background-color: #f0f0f0; color:#333; display:flex; min-height:100vh; }
+
+/* --- Sidebar --- */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg,#0a0146 0%,#1f3f7c 50%,#2e86c1 100%);
+  color:#fff; flex-shrink:0; display:flex; flex-direction:column;
+  padding:22px; position:fixed; height:100%; overflow-y:auto;
+  border-right:1px solid rgba(255,255,255,0.15);
+}
+.sidebar h2 { font-family:'Libre Baskerville',serif; font-size:1.7rem; margin-bottom:28px; color:#fff; }
+.sidebar a { color:#fff; text-decoration:none; margin:6px 0; display:flex; align-items:center;
+  padding:12px 14px; border-radius:8px; transition:0.25s; font-size:1rem; font-weight:500; }
+.sidebar a i { margin-right:10px; font-size:1.1rem; opacity:0.9; }
+.sidebar a:hover { background:rgba(41, 128, 185, 0.2); } /* soft dark blue hover */
+.sidebar a.active { background:rgba(41, 128, 185, 0.35); font-weight:550; }
+
+/* --- Content --- */
+.content {margin-left:300px; flex:1; padding:34px 48px; overflow-y:auto;}
+h1,h2,h3 { font-family:'Libre Baskerville',serif; color:#0a0146; margin-bottom:12px; }
+p,li { font-size:1rem; line-height:1.6; color:#24303a; margin-bottom:8px; }
+
+/* --- Card --- */
+.card { background:#fff; border-radius:12px; padding:20px; margin-bottom:22px; box-shadow:0 6px 18px rgba(10,6,70,0.05); }
+.card h3 { margin-bottom:10px; }
+
+/* --- Collapsible Sections --- */
+.collapsible {
+  background:#1e3e7b; color:#fff; cursor:pointer; padding:15px 20px; width:100%; 
+  border:none; border-radius:10px; text-align:left; font-size:1rem; margin-bottom:10px; 
+  display:flex; justify-content:space-between; align-items:center; transition:background-color 0.3s ease; font-weight:500;
+}
+.collapsible:hover { background:#2E86C1; }
+.collapsible:after { content:'\25BC'; font-size:1rem; transition:transform 0.35s ease; }
+.collapsible.active:after { transform:rotate(180deg); }
+
+.content-collapsible {
+  max-height:0; overflow:hidden; transition:max-height 0.45s ease, padding 0.35s ease; 
+  padding:0 20px; background:#FDFEFE; border-left:4px solid #1e3e7b;
+  border-radius:6px; margin-bottom:15px; display:block; color:#333;
+}
+.content-inner{padding:14px 0}
+.service-title{font-weight:700;color:#0a0146;margin-bottom:6px}
+
+/* --- Notes --- */
+.note{background:#fff7e6;border:1px solid #fde3a8;padding:12px;border-radius:8px;margin-top:10px}
+
+/* Responsive */
+@media(max-width:768px){
+  body{flex-direction:column;}
+  .sidebar{width:100%; flex-direction:row; overflow-x:auto; height:auto; padding:10px;}
+  .sidebar a{margin:0 12px; white-space:nowrap;}
+  .content{margin-left:0; padding:22px;}
+}
+/* Table general styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+/* Header styling */
+thead th {
+  font-weight: 550;
+  text-align: left; /* keep description left-aligned */
+  padding: 10px 8px;
+}
+
+/* Right-align number columns */
+tbody td:nth-child(1),
+tbody td:nth-child(3),
+tbody td:nth-child(4),
+tbody td:nth-child(5) {
+  text-align: right;
+  padding: 8px;
+}
+
+/* Optional: add subtle stripes for readability */
+tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* Optional: hover highlight */
+tbody tr:hover {
+  background: #a8d1ff;
+}
+
+
+</style>
+</head>
+<body>
+<div class="sidebar">
+  <h2>Aamer CSR Portal</h2>
+  <a href="index.html"><i class="fas fa-home"></i>Dashboard</a>
+  <a href="eid.html"><i class="fas fa-id-card"></i>EID Applications</a>
+  <a href="residency.html"><i class="fas fa-passport"></i>Residency Services</a>
+  <a href="goldenvisa.html"><i class="fas fa-crown"></i>Golden Visa</a>
+  <a href="workpermits.html"><i class="fas fa-briefcase"></i>Work Permits & HR</a>
+  <a href="domestic.html" class="active"><i class="fas fa-user-friends"></i>Domestic Workers</a>
+  <a href="judicial.html"><i class="fas fa-gavel"></i>Judicial & Legal</a>
+  <a href="attestations.html"><i class="fas fa-file-signature"></i>Attestation & Translation</a>
+  <a href="commercial.html"><i class="fas fa-building"></i>Commercial Licenses</a>
+  <a href="delivery.html"><i class="fas fa-truck"></i>Delivery Services</a>
+  <a href="visa.html"><i class="fas fa-plane"></i>International & Tourism Visa</a>
+  
+</div>
+
+<div class="content">
+  <h1> <i class="fas fa-user-friends"></i> Domestic Worker Services</h1>
+  <div class="card">
+     <h3>Overview</h3>
+  <p><strong>Description:</strong> Handle visas, new residency, renewal, cancellation for domestic workers (UAE National & GCC).</p>
+  <p><strong>Processing Time:</strong> 2–5 working days depending on service</p>
+  <p><strong>Fees:</strong> Confirm via Aamer app per service</p>
+  <div class="note">
+  <strong>Note:</strong> Before processing any Domestic Worker service, always check if the sponsor has more than one file in the system. If multiple files appear, the CSR must confirm with the applicant which file should be used to avoid delays or incorrect submissions.
+</div>
+
+</div>
+<!-- Search Bar under Overview -->
+<div class="card">
+  <h3>Search Domestic Worker Service Categories</h3>
+  <input type="text" id="category-search" placeholder="Type to search..." style="width:100%;padding:8px;border-radius:6px;border:1px solid #ccc;margin-top:6px;">
+</div>
+<!-- Domestic Worker Services Price List -->
+<div class="card">
+  <h3>Domestic Worker Services – Full Price List</h3>
+
+  <button class="collapsible">Domestic Worker Services & Fees</button>
+  <div class="content-collapsible">
+
+    <table style="width:100%; border-collapse: collapse; margin-top:10px;">
+      <thead style="background:#1e3e7b; color:#fff;">
+        <tr>
+          <th style="font-weight:550;">#</th>
+          <th style="font-weight:550;">Service Description</th>
+          <th style="font-weight:550;">Government Fees (AED)</th>
+          <th style="font-weight:550;">Typing / VAT Fees (AED)</th>
+          <th style="font-weight:550;">Total (AED)</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <!-- Cancellation of Residency -->
+        <tr>
+          <td>1</td>
+          <td>Cancellation of Residency (Domestic Worker)</td>
+          <td>0.00</td>
+          <td>153.36</td>
+          <td>153.36</td>
+        </tr>
+
+        <!-- New Entry Permit / Visa Issue -->
+        <tr>
+          <td>2</td>
+          <td>Entry Permit – New Visa Issue (Domestic Worker)</td>
+          <td>216.53</td>
+          <td>315.00</td>
+          <td>531.53</td>
+        </tr>
+
+        <!-- UAE Nationals & GCC – New Residency -->
+        <tr>
+          <td>3</td>
+          <td>New Residency Visa – UAE Nationals & GCC</td>
+          <td>673.45</td>
+          <td>319.92</td>
+          <td>993.37</td>
+        </tr>
+
+        <!-- UAE Nationals & GCC – Residency Renewal -->
+        <tr>
+          <td>4</td>
+          <td>Residency Renewal – UAE Nationals & GCC</td>
+          <td>673.45</td>
+          <td>655.92</td>
+          <td>1,329.37</td>
+        </tr>
+
+        <!-- Expat Residents – New / Renew Residency -->
+        <tr>
+          <td>5</td>
+          <td>New or Renew Residency Visa – Residents (Domestic Worker)</td>
+          <td>9,544.36</td>
+          <td>609.00</td>
+          <td>10,153.36</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+  <div class="card">
+ <h3>Domestic Worker Services-Full Details</h3>
+    <!-- Cancelation of Residency -->
+    <button class="collapsible">Cancelation of Residency (Domestic Worker)</button>
+    <div class="content-collapsible">
+      <div class="content-inner">
+        <div class="service-title">Service Card</div>
+        <ul>
+          <li>Cancelation of residency for a domestic worker</li>
+          <li>If the application is returned due to outstanding fees, Aamer will send an application form to be completed and returned</li>
+        </ul>
+        <div class="service-title">Service Duration</div>
+        <p>1 working day after receiving the documents</p>
+        <div class="service-title">Service Fees</div>
+        <p>153.36 AED (incl. 5% VAT)</p>
+      </div>
+    </div>
+
+    <!-- Issue New Visa -->
+    <button class="collapsible">Issue New Visa (Entry Permit)</button>
+    <div class="content-collapsible">
+      <div class="content-inner">
+        <div class="service-title">Service Card</div>
+        <ul>
+          <li>Issuing an entry permit for the domestic worker</li>
+          <li>Service includes Dubai Insurance</li>
+          <li>Visa process based on sponsor’s file; if multiple files exist, Aamer will contact the applicant</li>
+        </ul>
+        <div class="service-title">Service Duration</div>
+        <p>1 working day after receiving the documents</p>
+        <div class="service-title">Service Fees</div>
+        <p>531.53 AED (incl. 5% VAT)</p>
+      </div>
+    </div>
+
+    <!-- New Residency Visa / Renew (UAE National & GCC) -->
+    <button class="collapsible">New Residency Visa / Renew (UAE National & GCC)</button>
+    <div class="content-collapsible">
+      <div class="content-inner">
+        <div class="service-title">Service Card</div>
+        <ul>
+          <li>Issue new residency and Emirates ID or renew for the domestic worker</li>
+          <li>Service includes work contract, Emirates ID, and residence visa</li>
+          <li>Work contract emailed to applicant to sign via Aamer app</li>
+        </ul>
+        <div class="service-title">Service Duration</div>
+        <p>1–2 working days after receiving the documents</p>
+        <div class="service-title">Visa Validity</div>
+        <p>2 Years</p>
+        <div class="service-title">Service Fees</div>
+        <ul>
+          <li>New: 993.37 AED (incl. 5% VAT)</li>
+          <li>Renewal: 1,329.37 AED (incl. 5% VAT)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- New Residency Visa / Renew (Residents) -->
+    <button class="collapsible">New Residency Visa / Renew (Residents)</button>
+    <div class="content-collapsible">
+      <div class="content-inner">
+        <div class="service-title">Service Card</div>
+        <ul>
+          <li>Issue new residency and Emirates ID or renew for the domestic worker</li>
+          <li>Service includes work contract, Emirates ID, and residence visa</li>
+          <li>Work contract emailed to applicant to sign via Aamer app</li>
+        </ul>
+        <div class="service-title">Service Duration</div>
+        <p>1–2 working days after receiving the documents</p>
+        <div class="service-title">Visa Validity</div>
+        <p>If sponsor holds Golden Visa: 2 Years<br>If sponsor holds normal visa: 1 Year</p>
+        <div class="service-title">Service Fees</div>
+        <p>10,613.50 AED (incl. 5% VAT)</p>
+      </div>
+    </div>
+  </div>
+<!-- CSR Guidance / Practical Tips / Script section -->
+<div class="card">
+  <h3>CSR Guidance & Scripts</h3>
+  <button class="collapsible">CSR Step-by-Step Guidance</button>
+  <div class="content-collapsible">
+    <div class="content-inner">
+      <ol>
+        <li>Verify the applicant’s profile in the Aamer system.</li>
+        <li>Confirm the type of service: Cancellation, New Visa (Entry Permit), or Residency Renewal.</li>
+        <li>Check sponsor’s documents, visa status, and Emirates ID validity.</li>
+        <li>Provide guidance to submit forms via Aamer app, if required.</li>
+        <li>Confirm service fees and inform applicant about processing time.</li>
+        <li>Follow up on service status and update applicant accordingly.</li>
+        <li>Handle any special cases for Golden Visa sponsors or multiple files.</li>
+      </ol>
+    </div>
+  </div>
+
+  <button class="collapsible">Notes / Practical Tips</button>
+  <div class="content-collapsible">
+    <div class="content-inner">
+      <ul>
+        <li>Always verify the current visa validity before processing a new entry permit or renewal.</li>
+        <li>Ensure sponsor’s documents are complete and up to date to avoid delays.</li>
+        <li>For cancellations, check for outstanding fees and guide the applicant to complete forms if needed.</li>
+        <li>Clearly communicate the service fees and expected processing time.</li>
+        <li>For renewals, ensure Emirates ID and residency details are correct to prevent errors.</li>
+        <li>For residents under a Golden Visa, highlight the difference in validity duration.</li>
+      </ul>
+    </div>
+  </div>
+
+  <button class="collapsible">Realistic CSR Script</button>
+  <div class="content-collapsible">
+    <div class="content-inner">
+      <pre>
+“Hello [Applicant Name], thank you for contacting Aamer regarding domestic worker services.
+May I confirm which service you require today: Cancellation, New Visa (Entry Permit), or Residency Renewal?
+
+Please make sure that all required documents from the sponsor are complete. 
+If you are submitting a new residency or renewal, the work contract will be sent via the Aamer app for your review and signature.
+
+The processing time is typically 1–2 working days for most services. 
+The service fees depend on the type of service and will be confirmed through the Aamer app.
+
+Do you have all the necessary documents ready, or would you like me to guide you through the submission process?”
+      </pre>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const collapsibles = document.querySelectorAll('.collapsible');
+    collapsibles.forEach(btn => {
+      btn.addEventListener('click', function() {
+        this.classList.toggle('active');
+        const content = this.nextElementSibling;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+        } else {
+          // close all other panels
+          document.querySelectorAll('.content-collapsible').forEach(c => {
+            if(c !== content) c.style.maxHeight = null;
+          });
+          content.style.maxHeight = content.scrollHeight + 'px';
+          setTimeout(() => content.scrollIntoView({behavior:'smooth', block:'center'}), 220);
+        }
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      document.querySelectorAll('.content-collapsible').forEach(panel => {
+        if(panel.style.maxHeight) panel.style.maxHeight = panel.scrollHeight + 'px';
+      });
+    });
+  });
+  const searchInput = document.getElementById('category-search');
+  const collapsibles = document.querySelectorAll('.collapsible');
+
+  searchInput.addEventListener('input', function() {
+    const filter = searchInput.value.toLowerCase();
+    collapsibles.forEach(btn => {
+      const text = btn.textContent.toLowerCase();
+      if (text.includes(filter)) {
+        btn.style.display = '';
+        btn.nextElementSibling.style.display = ''; // show content container too
+      } else {
+        btn.style.display = 'none';
+        btn.nextElementSibling.style.display = 'none';
+      }
+    });
+  });
+
+</script> 
+</body>
+</html>
